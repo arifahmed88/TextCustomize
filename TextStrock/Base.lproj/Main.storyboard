@@ -1,24 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextStrock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n47-88-EQE">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5G-Of-Uwj">
+                                        <rect key="frame" x="10" y="681.33333333333337" width="53" height="26.333333333333371"/>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fZl-lv-iTr">
+                                        <rect key="frame" x="81" y="678" width="301" height="31"/>
+                                        <connections>
+                                            <action selector="fontSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="ptj-qd-fLb"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTR-Ur-bKM">
+                                        <rect key="frame" x="10.000000000000004" y="737.66666666666663" width="58.333333333333343" height="26.333333333333371"/>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="rQJ-ee-o94">
+                                        <rect key="frame" x="86.333333333333343" y="734" width="295.66666666666663" height="31"/>
+                                        <connections>
+                                            <action selector="strockSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="iec-Hd-oUw"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arif Ahmed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PW-9y-iuk">
+                                        <rect key="frame" x="138.33333333333334" y="409" width="113.33333333333334" height="26.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="22"/>
+                                        <color key="textColor" red="0.18039215689999999" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rQJ-ee-o94" firstAttribute="leading" secondItem="TTR-Ur-bKM" secondAttribute="trailing" constant="20" id="82T-8e-SGE"/>
+                                    <constraint firstItem="TTR-Ur-bKM" firstAttribute="top" secondItem="p5G-Of-Uwj" secondAttribute="bottom" constant="30" id="BFe-qT-VNd"/>
+                                    <constraint firstAttribute="bottom" secondItem="TTR-Ur-bKM" secondAttribute="bottom" constant="80" id="CaD-Gg-GGa"/>
+                                    <constraint firstAttribute="trailing" secondItem="fZl-lv-iTr" secondAttribute="trailing" constant="10" id="DNM-sE-yWL"/>
+                                    <constraint firstItem="rQJ-ee-o94" firstAttribute="top" secondItem="fZl-lv-iTr" secondAttribute="bottom" constant="26" id="L2B-s7-ch4"/>
+                                    <constraint firstAttribute="trailing" secondItem="rQJ-ee-o94" secondAttribute="trailing" constant="10" id="Oe7-n0-Li0"/>
+                                    <constraint firstItem="fZl-lv-iTr" firstAttribute="leading" secondItem="p5G-Of-Uwj" secondAttribute="trailing" constant="20" id="TOj-YP-lot"/>
+                                    <constraint firstItem="2PW-9y-iuk" firstAttribute="centerY" secondItem="n47-88-EQE" secondAttribute="centerY" id="afR-76-U3F"/>
+                                    <constraint firstItem="p5G-Of-Uwj" firstAttribute="leading" secondItem="n47-88-EQE" secondAttribute="leading" constant="10" id="d7r-v9-dCr"/>
+                                    <constraint firstItem="TTR-Ur-bKM" firstAttribute="leading" secondItem="n47-88-EQE" secondAttribute="leading" constant="10" id="kpe-ap-Ug7"/>
+                                    <constraint firstItem="2PW-9y-iuk" firstAttribute="centerX" secondItem="n47-88-EQE" secondAttribute="centerX" id="lbf-nd-3HK"/>
+                                    <constraint firstAttribute="bottom" secondItem="rQJ-ee-o94" secondAttribute="bottom" constant="80" id="xMj-n3-Yhk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n47-88-EQE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Ce-4A-jwd"/>
+                            <constraint firstItem="n47-88-EQE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="spT-cA-42r"/>
+                            <constraint firstItem="n47-88-EQE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tnm-rq-5PY"/>
+                            <constraint firstAttribute="bottom" secondItem="n47-88-EQE" secondAttribute="bottom" id="zXj-92-6Zn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fontSlider" destination="fZl-lv-iTr" id="4vF-4I-Ayf"/>
+                        <outlet property="holderView" destination="n47-88-EQE" id="hUX-ud-MJT"/>
+                        <outlet property="mainLabel" destination="2PW-9y-iuk" id="byS-M5-Amn"/>
+                        <outlet property="strockSlider" destination="rQJ-ee-o94" id="gpX-0G-piF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.692307692307693" y="3.5545023696682461"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
