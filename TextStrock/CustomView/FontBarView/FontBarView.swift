@@ -28,10 +28,13 @@ class FontBarView: UIView {
     }()
     
     let collectionViewCellIdentifier = "fontBarCollectionViewCellIdentifier"
-    var collectionViewPreviousSelectedIndex = 0
+    
+    var collectionViewPreviousSelectedIndex = IndexPath(item: 0, section: 0)
     
     var fontList = AllFonts.shared.availableFonts
     var delegate:FontBarViewDelegate?
+    
+    var selectedIndexPath: IndexPath?
     
     
     
@@ -72,7 +75,10 @@ class FontBarView: UIView {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+    
 }
+
+
 
 
 extension FontBarView: UICollectionViewDataSource {
@@ -85,25 +91,117 @@ extension FontBarView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as! FontBarCollectionViewCell
         let font = fontList[indexPath.item]
-        cell.setCell(text: font.fontName)
         
+        
+        var isSelected = false
+        if indexPath == collectionViewPreviousSelectedIndex{
+            isSelected = true
+        }
+        cell.setCell(text: font.fontName, isSelected: isSelected)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let previousIndexPath = IndexPath(item: collectionViewPreviousSelectedIndex.item, section: collectionViewPreviousSelectedIndex.section)
+        collectionViewPreviousSelectedIndex = indexPath
 
-        let previousIndexPath = IndexPath(item: collectionViewPreviousSelectedIndex, section: 0)
         collectionView.reloadItems(at: [previousIndexPath, indexPath])
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        collectionViewPreviousSelectedIndex = indexPath.item
+        //selectedIndexPath = indexPath
 
         if let currentCell = collectionView.cellForItem(at: indexPath) as? FontBarCollectionViewCell{
-            currentCell.cellSelectedAion()
+            currentCell.cellSelectedAction()
             delegate?.fontChange(fontName: fontList[indexPath.item].fontName)
         }
 
     }
 }
+
+
+
+//extension FontBarView: UICollectionViewDelegate {
+//    
+//    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//
+//        guard let centerIndexPath = getCenterIndex(),
+//            let selectedIndex = selectedIndexPath,
+//            centerIndexPath.item != selectedIndex.item else { return }
+//        
+//        
+//        
+//        let previousIndexPath = IndexPath(item: collectionViewPreviousSelectedIndex, section: 0)
+//        collectionView.reloadItems(at: [previousIndexPath, centerIndexPath])
+//        collectionView.scrollToItem(at: centerIndexPath, at: .centeredHorizontally, animated: true)
+//        collectionViewPreviousSelectedIndex = centerIndexPath.item
+//        selectedIndexPath = centerIndexPath
+//
+//        if let currentCell = collectionView.cellForItem(at: centerIndexPath) as? FontBarCollectionViewCell{
+//            currentCell.cellSelectedAion()
+//            delegate?.fontChange(fontName: fontList[centerIndexPath.item].fontName)
+//        }
+//        
+//    }
+//
+//
+//
+//    private func getCenterIndex() -> IndexPath? {
+//        let contentOffsetX = collectionView.contentOffset.x
+//        if contentOffsetX <= 0 {
+//            let indexPath = IndexPath(item: 0, section: 0)
+//            return indexPath
+//        }
+//
+//        if contentOffsetX >= (collectionView.contentSize.width - collectionView.bounds.width) {
+//            let indexPath = IndexPath(item: AllFonts.shared.availableFonts.count-1, section: 0)
+//            return indexPath
+//        }
+//
+//
+//        let center = self.convert(self.collectionView.center, to: self.collectionView)
+//        if let index = collectionView.indexPathForItem(at: center) {
+//            return index
+//        }
+//
+//        let multiplier: CGFloat = 3
+//        var thresholdCheck: CGFloat = 1
+//        while (thresholdCheck <= 50) {
+//            let modifiedCenter = CGPoint(x: center.x + (multiplier * thresholdCheck),
+//                                         y: center.y)
+//            if let centerIndexPath = collectionView.indexPathForItem(at: modifiedCenter) {
+//                return centerIndexPath
+//            }
+//            thresholdCheck+=1
+//        }
+//
+//        return nil
+//    }
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

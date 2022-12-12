@@ -9,14 +9,15 @@ import UIKit
 
 class CustomLabel: UILabel {
     
-    var gradientColor:GradientColor? = nil
-    var gradientAngel:CGFloat = 0.0
+    private var textGradientColor:GradientColor? = nil
+    private var textGradientAngel:CGFloat = 0.0
+    
+    private var strockGradientColor:GradientColor? = nil
+    private var strockGradientAngel:CGFloat = 0.0
     
     private var strockColor = UIColor.blue
     private var strocklineWidth:CGFloat = 0.0
     private var clearColor = UIColor.clear
-    
-    
     
     override init(frame: CGRect) {
         
@@ -38,17 +39,25 @@ class CustomLabel: UILabel {
         context.setLineWidth(strocklineWidth)
         context.setLineJoin(.round)
         context.setTextDrawingMode(.stroke)
-        self.textColor = strockColor
+        
+        if strockGradientColor != nil{
+            //Gradient Color Add
+            if let gColor = strockGradientColor{
+                let newColor = gColor.getGradientUIColor(in: rect,angle: strockGradientAngel)
+                self.textColor = newColor
+            }
+        } else {
+            //linear color add
+            self.textColor = strockColor
+        }
         super.drawText(in: rect)
         
         
         context.setTextDrawingMode(.fill)
-        
-        
-        if gradientColor != nil{
+        if textGradientColor != nil{
             //Gradient Color Add
-            if let gColor = gradientColor{
-                let newColor = gColor.getGradientUIColor(in: rect,angle: gradientAngel)
+            if let gColor = textGradientColor{
+                let newColor = gColor.getGradientUIColor(in: rect,angle: textGradientAngel)
                 self.textColor = newColor
             }
         } else {
@@ -64,6 +73,7 @@ class CustomLabel: UILabel {
         
         super.drawText(in: rect)
         self.shadowOffset = shadowOffset
+        context.restoreGState()
         
     }
     
@@ -73,21 +83,30 @@ class CustomLabel: UILabel {
     }
     
     func strockColorChange(color:UIColor){
+        self.strockGradientColor = nil
         self.strockColor = color
         self.setNeedsDisplay()
     }
     
     func textColorChange(color:UIColor){
-        gradientColor = nil
-        gradientAngel = 0.0
+        textGradientColor = nil
+        textGradientAngel = 0.0
         
         textColor = color
         setNeedsDisplay()
     }
     
     func textGradientColorAdd(gColor:GradientColor,angel:CGFloat = 0.0){
-        gradientAngel = angel
-        gradientColor = gColor
+        textColor = nil
+        textGradientAngel = angel
+        textGradientColor = gColor
+        print("gColor = \(gColor.firstColor)")
+        setNeedsDisplay()
+    }
+    
+    func strockGradientColorAdd(gColor:GradientColor,angel:CGFloat = 0.0){
+        strockGradientAngel = angel
+        strockGradientColor = gColor
         setNeedsDisplay()
     }
 

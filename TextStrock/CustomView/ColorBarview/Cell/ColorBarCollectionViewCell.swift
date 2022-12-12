@@ -23,7 +23,7 @@ class ColorBarCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
     }
     
-    func setupCell(){
+    func setupCell(isSelected:Bool){
         self.layer.cornerRadius = radius
         
         let insetvalue:CGFloat = 1.0
@@ -40,6 +40,10 @@ class ColorBarCollectionViewCell: UICollectionViewCell {
         
         colorView.layer.cornerRadius = radius
         //colorView.frame.height*0.5
+        
+        if isSelected{
+            cellSelectedAction()
+        }
         
     }
     

@@ -18,14 +18,18 @@ class FontBarCollectionViewCell: UICollectionViewCell {
     
     
     
-    func setCell(text:String?){
+    func setCell(text:String?,isSelected:Bool){
         let fontname = text ?? "arif"
         label.text = fontname
         label.textColor = color
         label.font = UIFont(name: fontname, size: 16) ?? UIFont.boldSystemFont(ofSize: 16)
+        
+        if isSelected{
+            cellSelectedAction()
+        }
     }
     
-    func cellSelectedAion(){
+    func cellSelectedAction(){
         label.textColor = selectedColor
     }
 

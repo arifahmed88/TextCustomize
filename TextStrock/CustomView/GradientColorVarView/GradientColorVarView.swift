@@ -1,17 +1,17 @@
 //
-//  ColorBarview.swift
-//  ImageColorPop
+//  GradientColorVarView.swift
+//  TextStrock
 //
-//  Created by PosterMaker on 11/23/22.
+//  Created by PosterMaker on 11/29/22.
 //
 
 import UIKit
 
-protocol ColorBarviewDelegate{
-    func selectedColor(color:UIColor)
+protocol GradientColorVarViewDelegate{
+    func selectedGradientColor(gColor:GradientColor)
 }
 
-class ColorBarview: UIView {
+class GradientColorVarView: UIView {
 
     var collectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -29,8 +29,8 @@ class ColorBarview: UIView {
     let collectionViewCellIdentifier = "colorBarCollectionViewCellIdentifier"
     var collectionViewPreviousSelectedIndex = 0
     
-    var colorList = UIColorList()
-    var delegate:ColorBarviewDelegate?
+    var colorList = UIGradientColorList()
+    var delegate:GradientColorVarViewDelegate?
     
     
     
@@ -74,20 +74,21 @@ class ColorBarview: UIView {
 }
 
 
-extension ColorBarview: UICollectionViewDataSource {
+extension GradientColorVarView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colorList.uiColorList.count
+        return colorList.uiGradentColorList.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as! ColorBarCollectionViewCell
-        cell.setupCell()
-        if indexPath.item >= colorList.uiColorList.count{
+        cell.setupCell(isSelected: false)
+        if indexPath.item >= colorList.uiGradentColorList.count{
             cell.colorView.backgroundColor = .gray
         } else {
-            cell.colorView.backgroundColor = colorList.uiColorList[indexPath.item]
+            let bColor = colorList.uiGradentColorList[indexPath.item].getGradientUIColor(in: cell.frame)
+            cell.colorView.backgroundColor = bColor
         }
         return cell
     }
@@ -101,7 +102,7 @@ extension ColorBarview: UICollectionViewDataSource {
 
         if let currentCell = collectionView.cellForItem(at: indexPath) as? ColorBarCollectionViewCell{
             currentCell.cellSelectedAction()
-            delegate?.selectedColor(color: colorList.uiColorList[indexPath.item])
+            delegate?.selectedGradientColor(gColor: colorList.uiGradentColorList[indexPath.item])
         }
 
     }
@@ -109,13 +110,14 @@ extension ColorBarview: UICollectionViewDataSource {
 
 
 
-extension ColorBarview: UICollectionViewDelegateFlowLayout {
+extension GradientColorVarView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.height, height: collectionView.bounds.height)
     }
     
 }
+
 
 
 

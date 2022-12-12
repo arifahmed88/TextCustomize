@@ -43,7 +43,7 @@ class GradientColor{
         let color1 = firstColor.cgColor
         let color2 = secondColor.cgColor
         gradientLayer.colors = [color1, color2]
-        gradientLayer.locations = [0.2, 0.8]
+        gradientLayer.locations = [0, 1]
 
         
         

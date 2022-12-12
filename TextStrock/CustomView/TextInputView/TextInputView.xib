@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextInputView" customModule="TextStrock" customModuleProvider="target">
+            <connections>
+                <outlet property="textInputView" destination="2H3-PA-05f" id="xea-gp-16w"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ng6-Es-g8O">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VLK-I5-28H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="systemThinMaterial"/>
+                </visualEffectView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWa-ua-QR0" userLabel="HolderView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCq-7a-A6E">
+                            <rect key="frame" x="10" y="10" width="80" height="37"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                <fontDescription key="titleFontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <color key="baseForegroundColor" red="0.29971526907920149" green="0.40048750954984008" blue="0.68288901417525771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="-1" eventType="touchUpInside" id="tkJ-Ru-5FQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TN-cF-cHT">
+                            <rect key="frame" x="295" y="10" width="70" height="37"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Done">
+                                <fontDescription key="titleFontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <color key="baseForegroundColor" red="0.29971526910000001" green="0.40048750950000001" blue="0.68288901420000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="doneButtonAction:" destination="-1" eventType="touchUpInside" id="fIM-WX-9SK"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text=" " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2H3-PA-05f">
+                            <rect key="frame" x="10" y="170" width="355" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="34"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="4TN-cF-cHT" secondAttribute="trailing" constant="10" id="6gV-P3-9Cr"/>
+                        <constraint firstItem="pCq-7a-A6E" firstAttribute="leading" secondItem="vWa-ua-QR0" secondAttribute="leading" constant="10" id="99R-4Y-Gk2"/>
+                        <constraint firstItem="pCq-7a-A6E" firstAttribute="top" secondItem="vWa-ua-QR0" secondAttribute="top" constant="10" id="E8O-mq-cEY"/>
+                        <constraint firstItem="4TN-cF-cHT" firstAttribute="top" secondItem="vWa-ua-QR0" secondAttribute="top" constant="10" id="Mky-LK-Eb6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ng6-Es-g8O" secondAttribute="bottom" id="0fe-1S-8x3"/>
+                <constraint firstItem="vWa-ua-QR0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1Gg-e1-giX"/>
+                <constraint firstAttribute="trailing" secondItem="Ng6-Es-g8O" secondAttribute="trailing" id="1a0-kN-bxh"/>
+                <constraint firstAttribute="bottom" secondItem="vWa-ua-QR0" secondAttribute="bottom" id="3jm-5T-3hA"/>
+                <constraint firstAttribute="trailing" secondItem="vWa-ua-QR0" secondAttribute="trailing" id="51h-yF-jfu"/>
+                <constraint firstItem="vWa-ua-QR0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="R6a-Hs-RyP"/>
+                <constraint firstItem="Ng6-Es-g8O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hB6-OY-Hiu"/>
+                <constraint firstItem="Ng6-Es-g8O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tHm-qj-naR"/>
+            </constraints>
+            <point key="canvasLocation" x="60" y="20.689655172413794"/>
+        </view>
+    </objects>
+</document>

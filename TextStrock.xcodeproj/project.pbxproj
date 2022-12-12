@@ -265,8 +265,16 @@
 		9E65366829334C4500CA0E11 /* FontBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65366729334C4500CA0E11 /* FontBarView.swift */; };
 		9E65366E29334C9B00CA0E11 /* FontBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65366C29334C9B00CA0E11 /* FontBarCollectionViewCell.swift */; };
 		9E65366F29334C9B00CA0E11 /* FontBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E65366D29334C9B00CA0E11 /* FontBarCollectionViewCell.xib */; };
+		9E903337293DB79400B6C3D7 /* FontTypographyAdjustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E903335293DB79400B6C3D7 /* FontTypographyAdjustViewController.swift */; };
+		9E903338293DB79400B6C3D7 /* FontTypographyAdjustViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E903336293DB79400B6C3D7 /* FontTypographyAdjustViewController.xib */; };
+		9EC33FEB293F19D900221888 /* CustomlabelSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC33FEA293F19D900221888 /* CustomlabelSecond.swift */; };
+		9EC36FA929388D0900DC06DF /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC36FA829388D0900DC06DF /* TextInputView.swift */; };
+		9EC36FAB29388D1600DC06DF /* TextInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC36FAA29388D1600DC06DF /* TextInputView.xib */; };
+		9EC36FAD29388D6E00DC06DF /* NibLoadeble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC36FAC29388D6E00DC06DF /* NibLoadeble.swift */; };
+		9EC36FAF2938955200DC06DF /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC36FAE2938955200DC06DF /* UIView+Extention.swift */; };
 		9ECA66CC2935D8AA003B2C86 /* GradientColorVarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECA66CB2935D8AA003B2C86 /* GradientColorVarView.swift */; };
 		9ECA66CE2935D920003B2C86 /* UIGradientColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECA66CD2935D920003B2C86 /* UIGradientColorList.swift */; };
+		9ECEEE312946FF2100AA5FD6 /* CustomLabelNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECEEE302946FF2100AA5FD6 /* CustomLabelNew.swift */; };
 		9ED51304292FA1A80042A69E /* ColorBarview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED51300292FA1A70042A69E /* ColorBarview.swift */; };
 		9ED51305292FA1A80042A69E /* ColorBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED51302292FA1A80042A69E /* ColorBarCollectionViewCell.swift */; };
 		9ED51306292FA1A80042A69E /* ColorBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ED51303292FA1A80042A69E /* ColorBarCollectionViewCell.xib */; };
@@ -541,8 +549,16 @@
 		9E65366729334C4500CA0E11 /* FontBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontBarView.swift; sourceTree = "<group>"; };
 		9E65366C29334C9B00CA0E11 /* FontBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E65366D29334C9B00CA0E11 /* FontBarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontBarCollectionViewCell.xib; sourceTree = "<group>"; };
+		9E903335293DB79400B6C3D7 /* FontTypographyAdjustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTypographyAdjustViewController.swift; sourceTree = "<group>"; };
+		9E903336293DB79400B6C3D7 /* FontTypographyAdjustViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontTypographyAdjustViewController.xib; sourceTree = "<group>"; };
+		9EC33FEA293F19D900221888 /* CustomlabelSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomlabelSecond.swift; sourceTree = "<group>"; };
+		9EC36FA829388D0900DC06DF /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
+		9EC36FAA29388D1600DC06DF /* TextInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputView.xib; sourceTree = "<group>"; };
+		9EC36FAC29388D6E00DC06DF /* NibLoadeble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadeble.swift; sourceTree = "<group>"; };
+		9EC36FAE2938955200DC06DF /* UIView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
 		9ECA66CB2935D8AA003B2C86 /* GradientColorVarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColorVarView.swift; sourceTree = "<group>"; };
 		9ECA66CD2935D920003B2C86 /* UIGradientColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGradientColorList.swift; sourceTree = "<group>"; };
+		9ECEEE302946FF2100AA5FD6 /* CustomLabelNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelNew.swift; sourceTree = "<group>"; };
 		9ED51300292FA1A70042A69E /* ColorBarview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBarview.swift; sourceTree = "<group>"; };
 		9ED51302292FA1A80042A69E /* ColorBarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		9ED51303292FA1A80042A69E /* ColorBarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorBarCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -592,6 +608,8 @@
 			children = (
 				9ED66379292CA4270046846A /* CustomLabel.swift */,
 				9E13EDFC292E486100ABD699 /* MaskLabel.swift */,
+				9EC33FEA293F19D900221888 /* CustomlabelSecond.swift */,
+				9ECEEE302946FF2100AA5FD6 /* CustomLabelNew.swift */,
 			);
 			path = CustoLabel;
 			sourceTree = "<group>";
@@ -601,6 +619,7 @@
 			children = (
 				9E65346A2933482100CA0E11 /* UIFont+Extention.swift */,
 				9E65366429334B4800CA0E11 /* String+Extention.swift */,
+				9EC36FAE2938955200DC06DF /* UIView+Extention.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -867,6 +886,7 @@
 			children = (
 				9E653469293347EC00CA0E11 /* Extention */,
 				9E65366229334AE400CA0E11 /* TextFont.swift */,
+				9EC36FAC29388D6E00DC06DF /* NibLoadeble.swift */,
 			);
 			path = HelperClass;
 			sourceTree = "<group>";
@@ -887,6 +907,37 @@
 				9E65366D29334C9B00CA0E11 /* FontBarCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		9E903333293DB69400B6C3D7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9EE580ED292A586000F79D98 /* ViewController.swift */,
+				9E903335293DB79400B6C3D7 /* FontTypographyAdjustViewController.swift */,
+				9E903336293DB79400B6C3D7 /* FontTypographyAdjustViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9E903334293DB6DC00B6C3D7 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				9ECA66CA2935D881003B2C86 /* GradientColorVarView */,
+				9E65366629334C0800CA0E11 /* FontBarView */,
+				9ED512FF292FA1A70042A69E /* ColorBarview */,
+				9E0B7310292FACD300987F37 /* CustoLabel */,
+				9EC36FA729388CE800DC06DF /* TextInputView */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		9EC36FA729388CE800DC06DF /* TextInputView */ = {
+			isa = PBXGroup;
+			children = (
+				9EC36FA829388D0900DC06DF /* TextInputView.swift */,
+				9EC36FAA29388D1600DC06DF /* TextInputView.xib */,
+			);
+			path = TextInputView;
 			sourceTree = "<group>";
 		};
 		9ECA66CA2935D881003B2C86 /* GradientColorVarView */ = {
@@ -938,15 +989,12 @@
 		9EE580E8292A586000F79D98 /* TextStrock */ = {
 			isa = PBXGroup;
 			children = (
-				9E65346C2933494400CA0E11 /* FontFamily */,
-				9E65366129334AD100CA0E11 /* HelperClass */,
 				9EE580E9292A586000F79D98 /* AppDelegate.swift */,
 				9EE580EB292A586000F79D98 /* SceneDelegate.swift */,
-				9EE580ED292A586000F79D98 /* ViewController.swift */,
-				9E0B7310292FACD300987F37 /* CustoLabel */,
-				9ED512FF292FA1A70042A69E /* ColorBarview */,
-				9E65366629334C0800CA0E11 /* FontBarView */,
-				9ECA66CA2935D881003B2C86 /* GradientColorVarView */,
+				9E65346C2933494400CA0E11 /* FontFamily */,
+				9E65366129334AD100CA0E11 /* HelperClass */,
+				9E903334293DB6DC00B6C3D7 /* CustomView */,
+				9E903333293DB69400B6C3D7 /* ViewControllers */,
 				9EE580EF292A586000F79D98 /* Main.storyboard */,
 				9EE580F2292A586200F79D98 /* Assets.xcassets */,
 				9EE580F4292A586200F79D98 /* LaunchScreen.storyboard */,
@@ -1020,6 +1068,7 @@
 				9E6536142933494500CA0E11 /* Stea Font.otf in Resources */,
 				9E65363B2933494500CA0E11 /* Azedo-Bold.otf in Resources */,
 				9E6535AE2933494400CA0E11 /* DancingScript-Bold.ttf in Resources */,
+				9E903338293DB79400B6C3D7 /* FontTypographyAdjustViewController.xib in Resources */,
 				9E6535842933494400CA0E11 /* Plane Crash.ttf in Resources */,
 				9E6535C32933494400CA0E11 /* Amithen.otf in Resources */,
 				9E65363E2933494500CA0E11 /* FreestyleScriptPlain.otf in Resources */,
@@ -1225,6 +1274,7 @@
 				9E6536112933494500CA0E11 /* Cute Jellyfish.otf in Resources */,
 				9E65357A2933494400CA0E11 /* Altavista Personal Use.ttf in Resources */,
 				9E6535672933494400CA0E11 /* BalooBhai-Regular.ttf in Resources */,
+				9EC36FAB29388D1600DC06DF /* TextInputView.xib in Resources */,
 				9E6536362933494500CA0E11 /* DMSans-Italic.ttf in Resources */,
 				9E6535DC2933494400CA0E11 /* demo-binggo-wood-display.otf in Resources */,
 				9E65358A2933494400CA0E11 /* SugarpunchDEMO.otf in Resources */,
@@ -1330,13 +1380,19 @@
 				9ED51305292FA1A80042A69E /* ColorBarCollectionViewCell.swift in Sources */,
 				9EE580EA292A586000F79D98 /* AppDelegate.swift in Sources */,
 				9ED51308292FA5AE0042A69E /* UIColorList.swift in Sources */,
+				9ECEEE312946FF2100AA5FD6 /* CustomLabelNew.swift in Sources */,
 				9ECA66CE2935D920003B2C86 /* UIGradientColorList.swift in Sources */,
 				9EE580EC292A586000F79D98 /* SceneDelegate.swift in Sources */,
 				9ED6637A292CA4270046846A /* CustomLabel.swift in Sources */,
 				9E65366329334AE400CA0E11 /* TextFont.swift in Sources */,
+				9E903337293DB79400B6C3D7 /* FontTypographyAdjustViewController.swift in Sources */,
+				9EC33FEB293F19D900221888 /* CustomlabelSecond.swift in Sources */,
 				9E65366829334C4500CA0E11 /* FontBarView.swift in Sources */,
 				9ECA66CC2935D8AA003B2C86 /* GradientColorVarView.swift in Sources */,
+				9EC36FAD29388D6E00DC06DF /* NibLoadeble.swift in Sources */,
+				9EC36FA929388D0900DC06DF /* TextInputView.swift in Sources */,
 				9E65366E29334C9B00CA0E11 /* FontBarCollectionViewCell.swift in Sources */,
+				9EC36FAF2938955200DC06DF /* UIView+Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

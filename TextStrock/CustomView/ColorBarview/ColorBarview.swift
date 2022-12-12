@@ -1,17 +1,18 @@
 //
-//  GradientColorVarView.swift
-//  TextStrock
+//  ColorBarview.swift
+//  ImageColorPop
 //
-//  Created by PosterMaker on 11/29/22.
+//  Created by PosterMaker on 11/23/22.
 //
 
 import UIKit
 
-protocol GradientColorVarViewDelegate{
+protocol ColorBarviewDelegate{
+    func selectedColor(color:UIColor)
     func selectedGradientColor(gColor:GradientColor)
 }
 
-class GradientColorVarView: UIView {
+class ColorBarview: UIView {
 
     var collectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -27,10 +28,11 @@ class GradientColorVarView: UIView {
     }()
     
     let collectionViewCellIdentifier = "colorBarCollectionViewCellIdentifier"
-    var collectionViewPreviousSelectedIndex = 0
+    var collectionViewPreviousSelectedIndex = IndexPath(item: 0, section: 0)
     
-    var colorList = UIGradientColorList()
-    var delegate:GradientColorVarViewDelegate?
+    var colorList = UIColorList()
+    var gradientColorList = UIGradientColorList()
+    var delegate:ColorBarviewDelegate?
     
     
     
@@ -74,35 +76,71 @@ class GradientColorVarView: UIView {
 }
 
 
-extension GradientColorVarView: UICollectionViewDataSource {
+extension ColorBarview: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colorList.uiGradentColorList.count
+        if section == 0 {
+            return gradientColorList.uiGradentColorList.count
+        }
+        return colorList.uiColorList.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as! ColorBarCollectionViewCell
-        cell.setupCell()
-        if indexPath.item >= colorList.uiGradentColorList.count{
+        
+        var isSelected = false
+        if indexPath == collectionViewPreviousSelectedIndex{
+            isSelected = true
+        }
+        cell.setupCell(isSelected: isSelected)
+        
+
+        
+        
+        if indexPath.section == 0 {
+            if indexPath.item >= gradientColorList.uiGradentColorList.count{
+                cell.colorView.backgroundColor = .gray
+            } else {
+                let bColor = gradientColorList.uiGradentColorList[indexPath.item].getGradientUIColor(in: cell.frame)
+                cell.colorView.backgroundColor = bColor
+            }
+            return cell
+        }
+        
+        if indexPath.item >= colorList.uiColorList.count{
             cell.colorView.backgroundColor = .gray
         } else {
-            let bColor = colorList.uiGradentColorList[indexPath.item].getGradientUIColor(in: cell.frame)
-            cell.colorView.backgroundColor = bColor
+            cell.colorView.backgroundColor = colorList.uiColorList[indexPath.item]
         }
         return cell
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        let previousIndexPath = IndexPath(item: collectionViewPreviousSelectedIndex, section: 0)
+        let previousIndexPath = IndexPath(item: collectionViewPreviousSelectedIndex.item, section: collectionViewPreviousSelectedIndex.section)
+        collectionViewPreviousSelectedIndex = indexPath
+        
         collectionView.reloadItems(at: [previousIndexPath, indexPath])
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        collectionViewPreviousSelectedIndex = indexPath.item
+        
 
         if let currentCell = collectionView.cellForItem(at: indexPath) as? ColorBarCollectionViewCell{
             currentCell.cellSelectedAction()
-            delegate?.selectedGradientColor(gColor: colorList.uiGradentColorList[indexPath.item])
+            if indexPath.section == 0 {
+                delegate?.selectedGradientColor(gColor: gradientColorList.uiGradentColorList[indexPath.item])
+            } else {
+                delegate?.selectedColor(color: colorList.uiColorList[indexPath.item])
+            }
         }
 
     }
@@ -110,14 +148,13 @@ extension GradientColorVarView: UICollectionViewDataSource {
 
 
 
-extension GradientColorVarView: UICollectionViewDelegateFlowLayout {
+extension ColorBarview: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.height, height: collectionView.bounds.height)
     }
     
 }
-
 
 
 
