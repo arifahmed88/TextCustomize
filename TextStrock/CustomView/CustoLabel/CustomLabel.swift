@@ -9,7 +9,9 @@ import UIKit
 
 class CustomLabel: UILabel {
     
-    private var textGradientColor:GradientColor? = nil
+     var texture:Texture? = nil
+    
+     var textGradientColor:GradientColor? = nil
     private var textGradientAngel:CGFloat = 0.0
     
     private var strockGradientColor:GradientColor? = nil
@@ -25,8 +27,8 @@ class CustomLabel: UILabel {
         backgroundColor = .clear
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
     }
     
     override func drawText(in rect: CGRect) {
@@ -36,6 +38,8 @@ class CustomLabel: UILabel {
         
         guard let context = UIGraphicsGetCurrentContext() else {return}
         
+        
+        //--------strock draw------------
         context.setLineWidth(strocklineWidth)
         context.setLineJoin(.round)
         context.setTextDrawingMode(.stroke)
@@ -52,9 +56,16 @@ class CustomLabel: UILabel {
         }
         super.drawText(in: rect)
         
-        
+        //--------text draw------------
         context.setTextDrawingMode(.fill)
-        if textGradientColor != nil{
+        
+        if texture != nil{
+            //texture Add
+            if let textTexture = texture{
+                let newColor = textTexture.getTextureUIColor(in: rect)
+                self.textColor = newColor
+            }
+        } else if textGradientColor != nil{
             //Gradient Color Add
             if let gColor = textGradientColor{
                 let newColor = gColor.getGradientUIColor(in: rect,angle: textGradientAngel)
@@ -88,27 +99,41 @@ class CustomLabel: UILabel {
         self.setNeedsDisplay()
     }
     
-    func textColorChange(color:UIColor){
-        textGradientColor = nil
-        textGradientAngel = 0.0
-        
-        textColor = color
-        setNeedsDisplay()
-    }
-    
-    func textGradientColorAdd(gColor:GradientColor,angel:CGFloat = 0.0){
-        textColor = nil
-        textGradientAngel = angel
-        textGradientColor = gColor
-        print("gColor = \(gColor.firstColor)")
-        setNeedsDisplay()
-    }
-    
     func strockGradientColorAdd(gColor:GradientColor,angel:CGFloat = 0.0){
         strockGradientAngel = angel
         strockGradientColor = gColor
         setNeedsDisplay()
     }
+    
+    func textColorChange(color:UIColor){
+        //print("color = \(color)")
+        self.textColor = color
+        texture = nil
+        textGradientColor = nil
+        textGradientAngel = 0.0
+        
+        
+        setNeedsDisplay()
+    }
+    
+    func textGradientColorAdd(gColor:GradientColor,angel:CGFloat = 0.0){
+        self.textColor = nil
+        texture = nil
+        textGradientAngel = angel
+        textGradientColor = gColor
+        setNeedsDisplay()
+    }
+    
+    func textTextureChange(textTexture:Texture){
+        self.textColor = nil
+        textGradientColor = nil
+        textGradientAngel = 0.0
+    
+        texture = textTexture
+        setNeedsDisplay()
+    }
+    
+    
 
 }
 

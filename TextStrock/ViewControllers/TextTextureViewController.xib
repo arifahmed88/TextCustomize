@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextTextureViewController" customModule="TextStrock" customModuleProvider="target">
+            <connections>
+                <outlet property="textureBarView" destination="tYd-Dq-AC3" id="nPg-7m-tEv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-IF-gxS">
+                    <rect key="frame" x="296.33333333333331" y="47" width="73.666666666666686" height="41.666666666666657"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Click">
+                        <fontDescription key="titleFontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
+                        <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                    </buttonConfiguration>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYd-Dq-AC3" customClass="TextureBarView" customModule="TextStrock" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="750" width="390" height="50"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="sbo-sP-yzU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tYd-Dq-AC3" secondAttribute="trailing" id="A7E-aO-jpk"/>
+                <constraint firstItem="KGE-IF-gxS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NZ0-vA-ba9"/>
+                <constraint firstItem="tYd-Dq-AC3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RmH-EN-Wr0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KGE-IF-gxS" secondAttribute="trailing" constant="20" id="q6S-Mg-JBk"/>
+                <constraint firstAttribute="bottom" secondItem="tYd-Dq-AC3" secondAttribute="bottom" constant="44" id="vIu-gk-dk1"/>
+            </constraints>
+            <point key="canvasLocation" x="40" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

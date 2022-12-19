@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var textureBarView: TextureBarView!
+    
     @IBOutlet weak var GradientTempView: UIView!
     @IBOutlet weak var strockFontColorlabel: UILabel!
     @IBOutlet weak var strockFontColorSwitch: UISwitch!
@@ -37,6 +40,7 @@ class ViewController: UIViewController {
     var textColor:UIColor? = UIColor.systemBlue
     var strockColor:UIColor? = UIColor.lightGray
     var gradientTextColor:GradientColor? = nil
+    var textTexture:Texture? = nil
     var gradientTextStrockColor:GradientColor? = nil
     
     var fontname = "Copperplate"
@@ -66,6 +70,7 @@ class ViewController: UIViewController {
         
         colorBarView.delegate = self
         fontBarView.delegate = self
+        textureBarView.delegate = self
         
         customLabelFontChange(value: CGFloat(fontSize))
         customLabelOutlineChange(value: CGFloat(strockSize))
@@ -141,13 +146,18 @@ class ViewController: UIViewController {
     
     @IBAction func nextButtonAction(_ sender: Any) {
         
-        let vc = FontTypographyAdjustViewController()
+        let vc = TextStyleViewController()
         vc.modalPresentationStyle = .overFullScreen
         
         present(vc, animated: true)
     }
     
     
+    @IBAction func curveButtonAction(_ sender: Any) {
+        let vc = TextCurveViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
     
     @IBAction func gradientSliderAction(_ sender: UISlider) {
         
@@ -206,7 +216,7 @@ class ViewController: UIViewController {
         view.addSubview(customLabel)
     }
     
-    var num = 1
+//    var num = 1
     func customLabelResize(){
         let font = UIFont(name: fontname, size: CGFloat(fontSize)) ?? UIFont.boldSystemFont(ofSize: CGFloat(fontSize))
        
@@ -214,15 +224,13 @@ class ViewController: UIViewController {
             NSAttributedString.Key.font : font
         ])
         let center = customLabel.center
-        let offsetValue:CGFloat = (60/CGFloat(fontSize))
-        customLabel.frame.size = CGSize(width: itemSize.width+(30*offsetValue), height: itemSize.height+(30*offsetValue))
+        let offsetValue:CGFloat = (CGFloat(fontSize)*40)/60
+        customLabel.frame.size = CGSize(width: itemSize.width+offsetValue, height: itemSize.height+offsetValue)
         customLabel.center = center
         
-        print("num\(num) = \(customLabel.font.ascender - customLabel.font.capHeight)")
-        num+=1
+        //print("num\(num) = \(customLabel.font.ascender - customLabel.font.capHeight)")
+//        num+=1
         //let baselineY = customLabel.frame.origin.y + customLabel.font.ascender
-        
-        
     }
     
     @IBAction func textEditButtonAction(_ sender: Any) {
@@ -332,6 +340,22 @@ extension ViewController:ColorBarviewDelegate{
     }
 }
 
+extension ViewController:TextureBarViewDelegate{
+    func selectedTexture(texture: Texture) {
+        transparentSwitch.isOn = false
+        gAngle = 0.0
+        gradientSlider.value = 0.0
+        
+        gradientTextColor = nil
+        textColor = nil
+        
+        textTexture = texture
+        customLabel.textTextureChange(textTexture: texture)
+    }
+    
+    
+}
+
 extension ViewController:FontBarViewDelegate{
     func fontChange(fontName: String?) {
         guard let name = fontName else {return}
@@ -373,3 +397,5 @@ extension ViewController: UIGestureRecognizerDelegate {
         return false
     }
 }
+
+

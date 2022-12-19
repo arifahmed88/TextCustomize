@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextStyleViewController" customModule="TextStrock" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="OrW-qE-aLK" id="SXB-U3-Mkc"/>
+                <outlet property="mainLabel" destination="Nt1-Mp-SxS" id="lm1-7e-T6G"/>
+                <outlet property="textEditButton" destination="YWv-0G-ExU" id="Gih-bJ-RNy"/>
+                <outlet property="textStyleBarView" destination="BVc-Cx-rfL" id="GLh-ph-iWk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6eW-2c-36x" userLabel="CloseView">
+                    <rect key="frame" x="24" y="54" width="24" height="24"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cancel" translatesAutoresizingMaskIntoConstraints="NO" id="KsA-GH-vQS">
+                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                            <color key="tintColor" red="0.023529411760000001" green="0.15686274510000001" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-qE-aLK">
+                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title=" "/>
+                            <connections>
+                                <action selector="closeButtonAction:" destination="-1" eventType="touchUpInside" id="W5u-GK-NA6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="6eW-2c-36x" secondAttribute="height" id="481-Kd-c7X"/>
+                        <constraint firstItem="OrW-qE-aLK" firstAttribute="leading" secondItem="6eW-2c-36x" secondAttribute="leading" id="4Ed-dB-QET"/>
+                        <constraint firstAttribute="bottom" secondItem="OrW-qE-aLK" secondAttribute="bottom" id="Hbp-t7-KtQ"/>
+                        <constraint firstAttribute="bottom" secondItem="KsA-GH-vQS" secondAttribute="bottom" id="ONK-di-nrf"/>
+                        <constraint firstItem="KsA-GH-vQS" firstAttribute="top" secondItem="6eW-2c-36x" secondAttribute="top" id="R0e-fv-9eG"/>
+                        <constraint firstAttribute="height" constant="24" id="Ryf-P7-xNJ"/>
+                        <constraint firstAttribute="trailing" secondItem="OrW-qE-aLK" secondAttribute="trailing" id="WRk-Ok-GjT"/>
+                        <constraint firstItem="KsA-GH-vQS" firstAttribute="leading" secondItem="6eW-2c-36x" secondAttribute="leading" id="eAk-dL-5cL"/>
+                        <constraint firstAttribute="trailing" secondItem="KsA-GH-vQS" secondAttribute="trailing" id="eVY-8u-sAY"/>
+                        <constraint firstItem="OrW-qE-aLK" firstAttribute="top" secondItem="6eW-2c-36x" secondAttribute="top" id="jRS-Kp-n3U"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nt1-Mp-SxS" customClass="CustomLabel" customModule="TextStrock" customModuleProvider="target">
+                    <rect key="frame" x="159.66666666666666" y="398" width="71" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" red="0.5" green="0.1311869668" blue="0.17170066419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVc-Cx-rfL" customClass="TextStyleBarView" customModule="TextStrock" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="724" width="390" height="60"/>
+                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="igY-0g-eMC"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWv-0G-ExU">
+                    <rect key="frame" x="265.33333333333331" y="54" width="100.66666666666669" height="39.333333333333343"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Edit Text">
+                        <fontDescription key="titleFontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
+                        <color key="baseForegroundColor" red="0.023529411764705882" green="0.15686274509803921" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="textEditButtonAction:" destination="-1" eventType="touchUpInside" id="a9A-i2-6X2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.84276094889999997" green="0.85290397220000003" blue="0.86078917980000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="BVc-Cx-rfL" secondAttribute="bottom" constant="60" id="1qk-s5-SQG"/>
+                <constraint firstItem="6eW-2c-36x" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="4mP-8p-RoV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YWv-0G-ExU" secondAttribute="trailing" constant="24" id="9Wo-Be-onD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BVc-Cx-rfL" secondAttribute="trailing" id="E8u-DE-ma9"/>
+                <constraint firstItem="BVc-Cx-rfL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HRG-HZ-Tk3"/>
+                <constraint firstItem="YWv-0G-ExU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="Jk8-CA-dV4"/>
+                <constraint firstItem="6eW-2c-36x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="vh6-Ee-G7d"/>
+            </constraints>
+            <point key="canvasLocation" x="40" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Cancel" width="20.333333969116211" height="20.333333969116211"/>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
