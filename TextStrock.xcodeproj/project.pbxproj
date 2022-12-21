@@ -472,6 +472,7 @@
 		9EC8469C2948721600B9EFB4 /* TextureBarViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EC8469A2948721600B9EFB4 /* TextureBarViewCollectionViewCell.xib */; };
 		9ECA66CC2935D8AA003B2C86 /* GradientColorVarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECA66CB2935D8AA003B2C86 /* GradientColorVarView.swift */; };
 		9ECA66CE2935D920003B2C86 /* UIGradientColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECA66CD2935D920003B2C86 /* UIGradientColorList.swift */; };
+		9ECC91372951847D00991302 /* DGCurvedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC91362951847D00991302 /* DGCurvedLabel.m */; };
 		9ECEEE312946FF2100AA5FD6 /* CustomLabelNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECEEE302946FF2100AA5FD6 /* CustomLabelNew.swift */; };
 		9ED51304292FA1A80042A69E /* ColorBarview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED51300292FA1A70042A69E /* ColorBarview.swift */; };
 		9ED51305292FA1A80042A69E /* ColorBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED51302292FA1A80042A69E /* ColorBarCollectionViewCell.swift */; };
@@ -954,6 +955,9 @@
 		9EC8469A2948721600B9EFB4 /* TextureBarViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextureBarViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		9ECA66CB2935D8AA003B2C86 /* GradientColorVarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColorVarView.swift; sourceTree = "<group>"; };
 		9ECA66CD2935D920003B2C86 /* UIGradientColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGradientColorList.swift; sourceTree = "<group>"; };
+		9ECC91352951847D00991302 /* DGCurvedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGCurvedLabel.h; sourceTree = "<group>"; };
+		9ECC91362951847D00991302 /* DGCurvedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGCurvedLabel.m; sourceTree = "<group>"; };
+		9ECC913B29518BC600991302 /* TextStrock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TextStrock-Bridging-Header.h"; sourceTree = "<group>"; };
 		9ECEEE302946FF2100AA5FD6 /* CustomLabelNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelNew.swift; sourceTree = "<group>"; };
 		9ED51300292FA1A70042A69E /* ColorBarview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBarview.swift; sourceTree = "<group>"; };
 		9ED51302292FA1A80042A69E /* ColorBarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBarCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1583,6 +1587,15 @@
 			path = GradientColorVarView;
 			sourceTree = "<group>";
 		};
+		9ECC91342951847D00991302 /* DGCurvedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				9ECC91352951847D00991302 /* DGCurvedLabel.h */,
+				9ECC91362951847D00991302 /* DGCurvedLabel.m */,
+			);
+			path = DGCurvedLabel;
+			sourceTree = "<group>";
+		};
 		9ED512FF292FA1A70042A69E /* ColorBarview */ = {
 			isa = PBXGroup;
 			children = (
@@ -1622,6 +1635,8 @@
 		9EE580E8292A586000F79D98 /* TextStrock */ = {
 			isa = PBXGroup;
 			children = (
+				9ECC913B29518BC600991302 /* TextStrock-Bridging-Header.h */,
+				9ECC91342951847D00991302 /* DGCurvedLabel */,
 				9E04C42E29489530000C71FF /* Texture */,
 				9EE580E9292A586000F79D98 /* AppDelegate.swift */,
 				9EE580EB292A586000F79D98 /* SceneDelegate.swift */,
@@ -2218,6 +2233,7 @@
 				9EC33FEB293F19D900221888 /* CustomlabelSecond.swift in Sources */,
 				9EC8469B2948721600B9EFB4 /* TextureBarViewCollectionViewCell.swift in Sources */,
 				9EC846972948718F00B9EFB4 /* TextureBarView.swift in Sources */,
+				9ECC91372951847D00991302 /* DGCurvedLabel.m in Sources */,
 				9E65366829334C4500CA0E11 /* FontBarView.swift in Sources */,
 				9ECA66CC2935D8AA003B2C86 /* GradientColorVarView.swift in Sources */,
 				9EC36FAD29388D6E00DC06DF /* NibLoadeble.swift in Sources */,
@@ -2389,6 +2405,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ariftest.com.arif.TextStrock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextStrock/TextStrock-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2419,6 +2436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ariftest.com.arif.TextStrock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TextStrock/TextStrock-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

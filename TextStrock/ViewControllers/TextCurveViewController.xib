@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="label" destination="lVP-yS-Ej6" id="Dzo-YL-kuf"/>
                 <outlet property="slider" destination="YGZ-WC-HsH" id="2Af-PB-Gb5"/>
+                <outlet property="sliderLabel" destination="LEA-Ea-jHP" id="cLx-Ao-e3n"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -67,21 +68,34 @@
                         <action selector="sliderAction:" destination="-1" eventType="valueChanged" id="QWd-Pr-7Ga"/>
                     </connections>
                 </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEA-Ea-jHP">
+                    <rect key="frame" x="189" y="662.33333333333337" width="12" height="27.666666666666629"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
+                    <color key="textColor" red="0.5" green="0.1311869668" blue="0.17170066419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="YGZ-WC-HsH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2yf-Xy-2pn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YGZ-WC-HsH" secondAttribute="trailing" constant="20" id="4RT-MX-V7d"/>
+                <constraint firstItem="YGZ-WC-HsH" firstAttribute="top" secondItem="LEA-Ea-jHP" secondAttribute="bottom" constant="20" id="8cn-sK-nZq"/>
                 <constraint firstItem="ptb-9X-Lyv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="C7d-wU-dVw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YGZ-WC-HsH" secondAttribute="bottom" constant="70" id="Wz6-KY-WTE"/>
                 <constraint firstItem="lVP-yS-Ej6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="YTW-xX-w75"/>
+                <constraint firstItem="LEA-Ea-jHP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nmM-FE-5e1"/>
                 <constraint firstItem="ptb-9X-Lyv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="55" id="vQA-EP-7uT"/>
                 <constraint firstItem="lVP-yS-Ej6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xjR-he-Df8"/>
             </constraints>
             <point key="canvasLocation" x="40" y="21"/>
         </view>
     </objects>
+    <designables>
+        <designable name="lVP-yS-Ej6">
+            <size key="intrinsicContentSize" width="228" height="69"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Cancel" width="20.333333969116211" height="20.333333969116211"/>
         <systemColor name="systemBackgroundColor">
