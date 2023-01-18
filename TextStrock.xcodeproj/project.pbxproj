@@ -456,6 +456,7 @@
 		9E6F47472949DDA800A78BFD /* TextStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E6F47452949DDA800A78BFD /* TextStyleViewController.xib */; };
 		9E903337293DB79400B6C3D7 /* FontTypographyAdjustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E903335293DB79400B6C3D7 /* FontTypographyAdjustViewController.swift */; };
 		9E903338293DB79400B6C3D7 /* FontTypographyAdjustViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E903336293DB79400B6C3D7 /* FontTypographyAdjustViewController.xib */; };
+		9EA08EF62976C06E00C9E642 /* BlendBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA08EF52976C06E00C9E642 /* BlendBarView.swift */; };
 		9EA9BFF6294EE557000930FD /* TextCurveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA9BFF4294EE557000930FD /* TextCurveViewController.swift */; };
 		9EA9BFF7294EE557000930FD /* TextCurveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA9BFF5294EE557000930FD /* TextCurveViewController.xib */; };
 		9EA9BFF9294EE8CE000930FD /* CurveUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA9BFF8294EE8CE000930FD /* CurveUILabel.swift */; };
@@ -939,6 +940,7 @@
 		9E6F47452949DDA800A78BFD /* TextStyleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextStyleViewController.xib; sourceTree = "<group>"; };
 		9E903335293DB79400B6C3D7 /* FontTypographyAdjustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTypographyAdjustViewController.swift; sourceTree = "<group>"; };
 		9E903336293DB79400B6C3D7 /* FontTypographyAdjustViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontTypographyAdjustViewController.xib; sourceTree = "<group>"; };
+		9EA08EF52976C06E00C9E642 /* BlendBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendBarView.swift; sourceTree = "<group>"; };
 		9EA9BFF4294EE557000930FD /* TextCurveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCurveViewController.swift; sourceTree = "<group>"; };
 		9EA9BFF5294EE557000930FD /* TextCurveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCurveViewController.xib; sourceTree = "<group>"; };
 		9EA9BFF8294EE8CE000930FD /* CurveUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveUILabel.swift; sourceTree = "<group>"; };
@@ -1541,6 +1543,7 @@
 		9E903334293DB6DC00B6C3D7 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				9EA08EF42976C04300C9E642 /* BlendBarView */,
 				9E6F47382949D9CD00A78BFD /* TextStyleBarView */,
 				9EC846952948715700B9EFB4 /* TextureBarView */,
 				9ECA66CA2935D881003B2C86 /* GradientColorVarView */,
@@ -1550,6 +1553,14 @@
 				9EC36FA729388CE800DC06DF /* TextInputView */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		9EA08EF42976C04300C9E642 /* BlendBarView */ = {
+			isa = PBXGroup;
+			children = (
+				9EA08EF52976C06E00C9E642 /* BlendBarView.swift */,
+			);
+			path = BlendBarView;
 			sourceTree = "<group>";
 		};
 		9EC36FA729388CE800DC06DF /* TextInputView */ = {
@@ -2226,6 +2237,7 @@
 				9ECA66CE2935D920003B2C86 /* UIGradientColorList.swift in Sources */,
 				9EA9BFF9294EE8CE000930FD /* CurveUILabel.swift in Sources */,
 				9EE580EC292A586000F79D98 /* SceneDelegate.swift in Sources */,
+				9EA08EF62976C06E00C9E642 /* BlendBarView.swift in Sources */,
 				9E04C42D294886C8000C71FF /* UIImage+Extention.swift in Sources */,
 				9ED6637A292CA4270046846A /* CustomLabel.swift in Sources */,
 				9E65366329334AE400CA0E11 /* TextFont.swift in Sources */,
@@ -2396,7 +2408,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2427,7 +2439,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

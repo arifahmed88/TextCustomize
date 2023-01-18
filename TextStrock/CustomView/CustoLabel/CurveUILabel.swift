@@ -11,23 +11,44 @@ import UIKit
 class CurveUILabel: UILabel {
 //    var inflection:CGFloat = 0.0
     
-    @IBInspectable var angle: CGFloat = 1.5708
+    @IBInspectable var angle: CGFloat = (90)*(.pi/180)
     @IBInspectable var clockwise: Bool = true
     var sliderValue:CGFloat = 0.0
+    var reverseAngle = false
     
-    override func drawText(in rect: CGRect) {
+    
+//    override func drawText(in rect: CGRect) {
+//        //super.drawText(in: rect)
+//        centreArcPerpendicular()
+//    }
+    
+    override func draw(_ rect: CGRect) {
+        //super.draw(rect)
         centreArcPerpendicular()
+        
     }
     
     func centreArcPerpendicular() {
         guard let context = UIGraphicsGetCurrentContext() else { return }
+
+        
         let str = self.text ?? ""
         let size = self.bounds.size
-        context.translateBy(x: size.width / 2, y: (size.height / 2)+sliderValue)
         
+        let flag:CGFloat = reverseAngle ? -1 : 1
+            
+        let point = CGPoint(x: size.width / 2, y: (size.height / 2)+(sliderValue*flag))
+        
+        context.translateBy(x: point.x, y: point.y)
         let radius = getRadiusForLabel()
+        print("radius = \(radius)")
+        
+        
         let l = str.count
-        let attributes : [NSAttributedString.Key : Any] = [.font : self.font ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0)),.foregroundColor : UIColor.systemRed]
+        
+        let textColor = self.textColor ?? .darkGray
+        let textFont = self.font ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))
+        let attributes : [NSAttributedString.Key : Any] = [.font : textFont,.foregroundColor : textColor]
         
         let characters: [String] = str.map { String($0) } // An array of single character strings, each character in str
         var arcs: [CGFloat] = [] // This will be the arcs subtended by each character
@@ -55,7 +76,13 @@ class CurveUILabel: UILabel {
             // Call centre with each character in turn.
             // Remember to add +/-90º to the slantAngle otherwise
             // the characters will "stack" round the arc rather than "text flow"
-            centre(text: characters[i], context: context, radius: radius, angle: thetaI, slantAngle: thetaI + slantCorrection)
+            var pColor:UIColor
+            if i == 0 {
+                pColor = .red
+            } else {
+                pColor = .green
+            }
+            centre(text: characters[i], context: context, radius: radius, angle: thetaI, slantAngle: thetaI + slantCorrection,pointColor: pColor)
             // The centre of the next character will then be at
             // thetaI = thetaI + arcs[i] / 2 + arcs[i + 1] / 2
             // but again we leave the last term to the start of the next loop...
@@ -73,21 +100,30 @@ class CurveUILabel: UILabel {
      i.e. the x= r * cos(theta) y= r * sin(theta)
      and rotated by the angle slantAngle
      */
-    func centre(text str: String, context: CGContext, radius r:CGFloat, angle theta: CGFloat, slantAngle: CGFloat) {
+    func centre(text str: String, context: CGContext, radius r:CGFloat, angle theta: CGFloat, slantAngle: CGFloat, pointColor:UIColor) {
         // Set the text attributes
-        let attributes = [NSAttributedString.Key.font: self.font!,.foregroundColor:UIColor.red] as [NSAttributedString.Key : Any]
+        let textColor = self.textColor ?? .darkGray
+        let textFont = self.font ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))
+        let attributes : [NSAttributedString.Key : Any] = [.font : textFont,.foregroundColor : textColor] as [NSAttributedString.Key : Any]
+        
+        
+        let flag:CGFloat = reverseAngle ? 1 : -1
         // Save the context
         context.saveGState()
         // Move the origin to the centre of the text (negating the y-axis manually)
-        context.translateBy(x: r * cos(theta), y: -(r * sin(theta)))
+        context.translateBy(x: r * cos(theta), y: flag*(r * sin(theta)))
         // Rotate the coordinate system
-        context.rotate(by: -slantAngle)
+        context.rotate(by: flag*slantAngle)
         // Calculate the width of the text
         let offset = str.size(withAttributes: attributes)
         // Move the origin by half the size of the text
         context.translateBy(x: -offset.width / 2, y: -offset.height / 2) // Move the origin to the centre of the text (negating the y-axis manually)
         // Draw the text
-        str.draw(at: CGPoint(x: 0, y: 0), withAttributes: attributes)
+        str.draw(at: CGPoint(x: 0, y: -4), withAttributes: attributes)
+        let cirPath = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: 1.0, startAngle: 0.0, endAngle: .pi*2, clockwise: true)
+        pointColor.set()
+        cirPath.lineWidth = 1.0
+        cirPath.stroke()
         // Restore the context
         context.restoreGState()
     }
@@ -101,9 +137,9 @@ class CurveUILabel: UILabel {
         let heightOfFont = self.text?.size(withAttributes: [NSAttributedString.Key.font: self.font ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))]).height ?? 0
         
         // Dividing the smallestWidthOrHeight by 2 gives us the radius for the circle.
-        let value = ((smallestWidthOrHeight/2) - heightOfFont + 5)+sliderValue
-        print("value = \(value)")
-        return value
+        let value = ((smallestWidthOrHeight/2) - heightOfFont) + sliderValue
+        //print("value = \(value)")
+        return abs(value)
     }
 
 }
@@ -165,7 +201,7 @@ extension CurveUILabel{
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20),
             NSAttributedString.Key.strokeColor : UIColor.black,
             NSAttributedString.Key.strokeWidth : -1.0,
-            NSAttributedString.Key.foregroundColor: UIColor.systemMint,
+            NSAttributedString.Key.foregroundColor: UIColor.green,
             
         ] as [NSAttributedString.Key : Any]
         

@@ -9,15 +9,18 @@ import UIKit
 
 class CustomLabel: UILabel {
     
-     var texture:Texture? = nil
+    var texture:Texture? = nil
     
-     var textGradientColor:GradientColor? = nil
+    var textGradientColor:GradientColor? = nil
     private var textGradientAngel:CGFloat = 0.0
     
     private var strockGradientColor:GradientColor? = nil
     private var strockGradientAngel:CGFloat = 0.0
     
-    private var strockColor = UIColor.blue
+    var strocktexture:Texture? = nil
+    var strocktextureColor:UIColor? = nil
+    
+    private var strockColor:UIColor? = nil
     private var strocklineWidth:CGFloat = 0.0
     private var clearColor = UIColor.clear
     
@@ -44,7 +47,22 @@ class CustomLabel: UILabel {
         context.setLineJoin(.round)
         context.setTextDrawingMode(.stroke)
         
-        if strockGradientColor != nil{
+        
+        //----//
+//        if strocktexture != nil{
+//            //texture Add
+//            if let textTexture = strocktexture{
+//                let newColor = textTexture.getTextureUIColor(in: rect)
+//                self.textColor = newColor
+//            }
+        if strocktextureColor != nil{
+            //texture Add
+            if let strockTexture = strocktextureColor{
+                //let newColor = textTexture.getTextureUIColor(in: rect)
+                self.textColor = strockTexture
+            }
+            
+        } else if strockGradientColor != nil{
             //Gradient Color Add
             if let gColor = strockGradientColor{
                 let newColor = gColor.getGradientUIColor(in: rect,angle: strockGradientAngel)
@@ -52,7 +70,10 @@ class CustomLabel: UILabel {
             }
         } else {
             //linear color add
-            self.textColor = strockColor
+            if let strockColor{
+                self.textColor = strockColor
+            }
+            
         }
         super.drawText(in: rect)
         
@@ -64,6 +85,7 @@ class CustomLabel: UILabel {
             if let textTexture = texture{
                 let newColor = textTexture.getTextureUIColor(in: rect)
                 self.textColor = newColor
+                
             }
         } else if textGradientColor != nil{
             //Gradient Color Add
@@ -85,7 +107,7 @@ class CustomLabel: UILabel {
         super.drawText(in: rect)
         self.shadowOffset = shadowOffset
         context.restoreGState()
-        
+    
     }
     
     func strockSizeChange(value:CGFloat){
@@ -94,12 +116,15 @@ class CustomLabel: UILabel {
     }
     
     func strockColorChange(color:UIColor){
-        self.strockGradientColor = nil
-        self.strockColor = color
-        self.setNeedsDisplay()
+        strocktextureColor = nil
+        strockGradientColor = nil
+        strockColor = color
+        setNeedsDisplay()
     }
     
     func strockGradientColorAdd(gColor:GradientColor,angel:CGFloat = 0.0){
+        strocktextureColor = nil
+        
         strockGradientAngel = angel
         strockGradientColor = gColor
         setNeedsDisplay()
@@ -112,12 +137,12 @@ class CustomLabel: UILabel {
         textGradientColor = nil
         textGradientAngel = 0.0
         
-        
         setNeedsDisplay()
     }
     
     func textGradientColorAdd(gColor:GradientColor,angel:CGFloat = 0.0){
         self.textColor = nil
+        
         texture = nil
         textGradientAngel = angel
         textGradientColor = gColor
@@ -130,6 +155,30 @@ class CustomLabel: UILabel {
         textGradientAngel = 0.0
     
         texture = textTexture
+        setNeedsDisplay()
+    }
+    
+    func textStrockTextureChange(textTexture:Texture){
+        
+        self.strockGradientColor = nil
+        
+//        self.textColor = nil
+//        textGradientColor = nil
+//        textGradientAngel = 0.0
+    
+        strocktexture = textTexture
+        setNeedsDisplay()
+    }
+    
+    func textStrockTextureChange(textTextureColor:UIColor?){
+        
+        self.strockGradientColor = nil
+        
+//        self.textColor = nil
+//        textGradientColor = nil
+//        textGradientAngel = 0.0
+    
+        strocktextureColor = textTextureColor
         setNeedsDisplay()
     }
     

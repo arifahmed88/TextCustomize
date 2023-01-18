@@ -116,91 +116,82 @@ extension FontBarView: UICollectionViewDataSource {
         }
 
     }
+    
 }
 
 
 
-//extension FontBarView: UICollectionViewDelegate {
-//    
-//    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+extension FontBarView: UICollectionViewDelegate {
+    
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let centerIndex = collectionView.centerCellIndexPath,
+//            ,
+//            let previousSelelectedIndexPath = selectedIndexPath,
+            centerIndex.item != collectionViewPreviousSelectedIndex.item
+        {
+            print("arif = \(centerIndex)")
+            let previousIndexPath = IndexPath(item: collectionViewPreviousSelectedIndex.item, section: collectionViewPreviousSelectedIndex.section)
+            collectionViewPreviousSelectedIndex = centerIndex
+
+            collectionView.reloadItems(at: [previousIndexPath, centerIndex])
+//            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            //selectedIndexPath = indexPath
+
+            if let currentCell = collectionView.cellForItem(at: centerIndex) as? FontBarCollectionViewCell{
+                currentCell.cellSelectedAction()
+                delegate?.fontChange(fontName: fontList[centerIndex.item].fontName)
+            }
+            
+            
+            
+
+//            print("LM font: center indexpath: \(centerIndex.row)")
+//            textFonts[previousSelelectedIndexPath.row].isSelected = false
+//            collectionView.reloadItems(at: [previousSelelectedIndexPath])
+//            textFonts[centerIndex.row].isSelected = true
+//            collectionView.reloadItems(at: [centerIndex])
+            selectedIndexPath = centerIndex
 //
-//        guard let centerIndexPath = getCenterIndex(),
-//            let selectedIndex = selectedIndexPath,
-//            centerIndexPath.item != selectedIndex.item else { return }
-//        
-//        
-//        
-//        let previousIndexPath = IndexPath(item: collectionViewPreviousSelectedIndex, section: 0)
-//        collectionView.reloadItems(at: [previousIndexPath, centerIndexPath])
-//        collectionView.scrollToItem(at: centerIndexPath, at: .centeredHorizontally, animated: true)
-//        collectionViewPreviousSelectedIndex = centerIndexPath.item
-//        selectedIndexPath = centerIndexPath
-//
-//        if let currentCell = collectionView.cellForItem(at: centerIndexPath) as? FontBarCollectionViewCell{
-//            currentCell.cellSelectedAion()
-//            delegate?.fontChange(fontName: fontList[centerIndexPath.item].fontName)
-//        }
-//        
-//    }
-//
-//
-//
-//    private func getCenterIndex() -> IndexPath? {
-//        let contentOffsetX = collectionView.contentOffset.x
-//        if contentOffsetX <= 0 {
-//            let indexPath = IndexPath(item: 0, section: 0)
-//            return indexPath
-//        }
-//
-//        if contentOffsetX >= (collectionView.contentSize.width - collectionView.bounds.width) {
-//            let indexPath = IndexPath(item: AllFonts.shared.availableFonts.count-1, section: 0)
-//            return indexPath
-//        }
-//
-//
-//        let center = self.convert(self.collectionView.center, to: self.collectionView)
-//        if let index = collectionView.indexPathForItem(at: center) {
-//            return index
-//        }
-//
-//        let multiplier: CGFloat = 3
-//        var thresholdCheck: CGFloat = 1
-//        while (thresholdCheck <= 50) {
-//            let modifiedCenter = CGPoint(x: center.x + (multiplier * thresholdCheck),
-//                                         y: center.y)
-//            if let centerIndexPath = collectionView.indexPathForItem(at: modifiedCenter) {
-//                return centerIndexPath
-//            }
-//            thresholdCheck+=1
-//        }
-//
-//        return nil
-//    }
-//}
+//            delegate?.selected(fontFamily: textFonts[centerIndex.row].fontName!)
+//            delegate?.fontChange(fontName: fontList[indexPath.item].fontName)
+        }
+    }
 
 
+    private func getCenterIndex() -> IndexPath? {
+        let contentOffsetX = collectionView.contentOffset.x
+        if contentOffsetX <= 0 {
+            let indexPath = IndexPath(item: 0, section: 0)
+            return indexPath
+        }
+
+        if contentOffsetX >= (collectionView.contentSize.width - collectionView.bounds.width) {
+            let indexPath = IndexPath(item: AllFonts.shared.availableFonts.count-1, section: 0)
+            return indexPath
+        }
 
 
+        let center = self.convert(self.collectionView.center, to: self.collectionView)
+        if let index = collectionView.indexPathForItem(at: center) {
+            return index
+        }
 
+        let multiplier: CGFloat = 3
+        var thresholdCheck: CGFloat = 1
+        while (thresholdCheck <= 50) {
+            let modifiedCenter = CGPoint(x: center.x + (multiplier * thresholdCheck),
+                                         y: center.y)
+            if let centerIndexPath = collectionView.indexPathForItem(at: modifiedCenter) {
+                return centerIndexPath
+            }
+            thresholdCheck+=1
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return nil
+    }
+}
 
 
 
@@ -225,3 +216,38 @@ extension FontBarView: UICollectionViewDelegateFlowLayout {
 
 
 
+
+
+
+
+extension UICollectionView {
+    
+    var centerPoint : CGPoint {
+        
+        get {
+            return CGPoint(x: self.center.x + self.contentOffset.x, y: self.center.y + self.contentOffset.y);
+        }
+    }
+    
+    var centerCellIndexPath: IndexPath? {
+        
+        if let centerIndexPath = self.indexPathForItem(at: self.centerPoint) {
+            return centerIndexPath
+        }
+//        print("pm: collectionview centerPoint: \(centerPoint)")
+        let multiplier: CGFloat = 3
+        var thresholdCheck: CGFloat = 1
+        while (thresholdCheck <= 50) {
+//            print("pm: collectionview threshold: \(centerPoint)")
+            let modifiedCenter = CGPoint(x: self.centerPoint.x + (multiplier * thresholdCheck),
+                                         y: self.centerPoint.y)
+            if let centerIndexPath = self.indexPathForItem(at: modifiedCenter) {
+                return centerIndexPath
+            }
+            thresholdCheck += 1
+        }
+        return nil
+    }
+    
+    
+}

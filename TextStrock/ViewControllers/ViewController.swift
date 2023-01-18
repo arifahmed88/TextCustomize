@@ -9,8 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var BGImageView: UIImageView!
+    @IBOutlet weak var blendBarView: BlendBarView!
     @IBOutlet weak var textureBarView: TextureBarView!
-    
     @IBOutlet weak var GradientTempView: UIView!
     @IBOutlet weak var strockFontColorlabel: UILabel!
     @IBOutlet weak var strockFontColorSwitch: UISwitch!
@@ -32,6 +33,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var gradientSlider: UISlider!
     @IBOutlet weak var gradientSliderlabel: UILabel!
     
+    var picker:UIImagePickerController = UIImagePickerController()
+    
     var textInputView:TextInputView? = nil
     
     var gAngle:Float = 0
@@ -43,7 +46,7 @@ class ViewController: UIViewController {
     var textTexture:Texture? = nil
     var gradientTextStrockColor:GradientColor? = nil
     
-    var fontname = "Copperplate"
+    var fontname = "CabinSketch-Bold"
     var labelText = "ARIF AHMED"
     
     var isOutline = true
@@ -52,13 +55,17 @@ class ViewController: UIViewController {
         var label = CustomLabel(frame: .zero)
         label.backgroundColor = .clear
         label.text = "ARIF AHMED"
-        label.font = UIFont(name: "Chalkduster", size: 50)
+        label.font = UIFont(name: "CabinSketch-Bold", size: 50)
         label.textAlignment  = .center
         label.numberOfLines = 0
         
         label.textColor = .red
         label.isUserInteractionEnabled = true
         label.sizeToFit()
+        
+        label.layer.borderColor = UIColor.gray.cgColor
+        label.layer.borderWidth = 2.0
+        
         return label
     }()
     
@@ -71,6 +78,7 @@ class ViewController: UIViewController {
         colorBarView.delegate = self
         fontBarView.delegate = self
         textureBarView.delegate = self
+        blendBarView.delegate = self
         
         customLabelFontChange(value: CGFloat(fontSize))
         customLabelOutlineChange(value: CGFloat(strockSize))
@@ -78,6 +86,8 @@ class ViewController: UIViewController {
         customLabel.text = labelText
         customLabelResize()
         gestureAddInLabel()
+        
+        picker.delegate = self
 
     }
     
@@ -90,7 +100,7 @@ class ViewController: UIViewController {
         gradientTextColor = gColor
         textColor = nil
         
-        fontChange(fontName: fontBarView.fontList[0].fontName)
+//        fontChange(fontName: fontBarView.fontList[1].fontName)
     }
     
     override var prefersStatusBarHidden: Bool{
@@ -142,6 +152,15 @@ class ViewController: UIViewController {
             break
         }
         gesture.setTranslation(CGPoint.zero, in: self.customLabel)
+    }
+    
+    
+    @IBAction func bgChangeButtonAction(_ sender: Any) {
+        
+        picker.allowsEditing = false
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        present(picker, animated: true, completion: nil)
+    
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
@@ -290,7 +309,6 @@ class ViewController: UIViewController {
                 return
             }
             customLabel.textGradientColorAdd(gColor: gColor)
-            
         }
         
     }
@@ -342,15 +360,19 @@ extension ViewController:ColorBarviewDelegate{
 
 extension ViewController:TextureBarViewDelegate{
     func selectedTexture(texture: Texture) {
-        transparentSwitch.isOn = false
-        gAngle = 0.0
-        gradientSlider.value = 0.0
+//        transparentSwitch.isOn = false
+//        gAngle = 0.0
+//        gradientSlider.value = 0.0
+//
+//        gradientTextColor = nil
+//        textColor = nil
+//
+//        textTexture = texture
         
-        gradientTextColor = nil
-        textColor = nil
         
-        textTexture = texture
-        customLabel.textTextureChange(textTexture: texture)
+        let newColor = texture.getTextureUIColor(in: customLabel.bounds)
+        
+        customLabel.textStrockTextureChange(textTextureColor: newColor)
     }
     
     
@@ -365,6 +387,17 @@ extension ViewController:FontBarViewDelegate{
         customLabelResize()
     }
 }
+
+//extension ViewController:FontFamilyDelegate{
+//    func selected(fontFamily: String) {
+//        let name = fontFamily
+//        fontname = name
+//        customLabel.font = UIFont(name: name, size: CGFloat(fontSize))
+//        customLabel.setNeedsDisplay()
+//        customLabelResize()
+//    }
+//
+//}
 
 extension ViewController:TextInputViewDelegate{
     func buttonAction(text: String?) {
@@ -398,4 +431,47 @@ extension ViewController: UIGestureRecognizerDelegate {
     }
 }
 
+extension ViewController:BlendBarViewDelegate{
+    func blendModeChange(blendModeName: String?) {
+        print("arif")
+        if let blendModeName{
+            if blendModeName == "None"{
+                customLabel.layer.compositingFilter = nil
+            } else {
+                customLabel.layer.compositingFilter = blendModeName
+            }
+            
+        }
+        
+    }
+}
 
+
+///
+///
+///
+
+extension ViewController:UIImagePickerControllerDelegate,UIPopoverControllerDelegate,UINavigationControllerDelegate {
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let image = info[.originalImage] as? UIImage else {
+            print("error")
+            return
+        }
+                
+        dismiss(animated: true, completion: {
+            self.BGImageView.image = image
+        })
+    }
+     
+}

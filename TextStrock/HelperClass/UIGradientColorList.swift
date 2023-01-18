@@ -53,6 +53,10 @@ class GradientColor{
         
         let image = imageFromLayer(layer: gradientLayer)
         
+//        let config = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 40))
+//        let pattern = UIColor(patternImage: UIImage(systemName: "heart", withConfiguration: config)!)
+//        patternView.backgroundColor = pattern
+        
         return UIColor(patternImage: image)
     }
     
