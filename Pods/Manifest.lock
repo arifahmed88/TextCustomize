@@ -1,16 +1,24 @@
 PODS:
+  - HandySwift (3.2.1)
+  - HandyUIKit (1.9.3)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - HandySwift
+  - HandyUIKit
   - SnapKit (~> 5.6.0)
 
 SPEC REPOS:
   trunk:
+    - HandySwift
+    - HandyUIKit
     - SnapKit
 
 SPEC CHECKSUMS:
+  HandySwift: 091d23b81d59b577029516ff3e03ce70fea6ffbb
+  HandyUIKit: 9183e92e01d771d67deea53463a4adc938d9d4c3
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: e6d720f7e70d628428cbd3eb3671ed1168b8ecdb
+PODFILE CHECKSUM: 02e9654afcca611419be651bdde1ee8ce00b1a0a
 
 COCOAPODS: 1.11.3

@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol TextStyleViewControllerDelegate{
+    func textStyleApply(style: TextStyle?)
+}
+
 class TextStyleViewController: UIViewController {
     
+    @IBOutlet weak var applyStyleButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var textEditButton: UIButton!
     
@@ -20,6 +25,8 @@ class TextStyleViewController: UIViewController {
     var labelText = "goal"
     var fontSize:CGFloat = 150
     var fontName = "Oswald-Bold"
+    var delegate:TextStyleViewControllerDelegate?
+    var selecteTextStyle:TextStyle? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         labelInit()
@@ -39,9 +46,7 @@ class TextStyleViewController: UIViewController {
         let size = UIScreen.main.bounds.size
         mainLabel.center = CGPoint(x: size.width*0.5, y: size.height*0.5)
         
-//        mainLabel.layer.borderColor = UIColor.hexStringToUIColor(hex: "#06283D").cgColor
-//        mainLabel.layer.borderWidth = 2.0
-//        mainLabel.layer.cornerRadius = 4.0
+        
     }
     
     private func allButtonInit(){
@@ -53,6 +58,10 @@ class TextStyleViewController: UIViewController {
 //        closeButton.layer.borderColor = UIColor.hexStringToUIColor(hex: "#06283D").cgColor
 //        closeButton.layer.borderWidth = 2.0
 //        closeButton.layer.cornerRadius = closeButton.bounds.height*0.5
+        
+        applyStyleButton.layer.borderColor = UIColor.hexStringToUIColor(hex: "#06283D").cgColor
+        applyStyleButton.layer.borderWidth = 2.0
+        applyStyleButton.layer.cornerRadius = 4.0
         
     }
     
@@ -67,6 +76,10 @@ class TextStyleViewController: UIViewController {
         
     }
     
+    @IBAction func applyStyleButtonAction(_ sender: Any) {
+        delegate?.textStyleApply(style: selecteTextStyle)
+        dismiss(animated: true)
+    }
     @IBAction func textEditButtonAction(_ sender: Any) {
         textInputView = TextInputView(frame: UIScreen.main.bounds)
         
@@ -192,6 +205,7 @@ class TextStyleViewController: UIViewController {
 
 extension TextStyleViewController:TextStyleBarViewDelegate{
     func styleApply(style: TextStyle) {
+        selecteTextStyle = style
         applyStyle(style: style)
     }
 }

@@ -93,7 +93,7 @@ class TextStyleLists{
     }
     
     private func styleAdd(){
-        let tex = TextTexture()
+        let texture = TextTexture().backgrounds
         
         
         let sColor1 = UIColor.hexStringToUIColor(hex: "#65647C")
@@ -118,7 +118,7 @@ class TextStyleLists{
         let sColor3 = UIColor.hexStringToUIColor(hex: "#282A3A")
         let shadow3 = TextShadow(offset: CGSize(width: 6, height: 6), color: sColor3, blur: 2, opacity: 1.0)
         let outLine3 = TextOutLine(color: UIColor.hexStringToUIColor(hex: "#3F3B6C"), lineWidth: 4.0)
-        let style3 = TextStyle(shadow: shadow3,outLine: outLine3,texture: tex.textures[11],fontName: "Crowers")
+        let style3 = TextStyle(shadow: shadow3,outLine: outLine3,texture: texture[11],fontName: "Crowers")
         styles.append(style3)
         
         
@@ -132,7 +132,7 @@ class TextStyleLists{
         
         
         let outLine5 = TextOutLine(color: UIColor.hexStringToUIColor(hex: "#393E46"), lineWidth: 4.0)
-        let style5 = TextStyle(outLine: outLine5,texture: tex.textures[30],fontName: "MONOGRAMOS")
+        let style5 = TextStyle(outLine: outLine5,texture: texture[30],fontName: "MONOGRAMOS")
         styles.append(style5)
         
         let sColor6 = UIColor.hexStringToUIColor(hex: "#6B728E")
@@ -160,7 +160,7 @@ class TextStyleLists{
         
         let sColor9 = UIColor.hexStringToUIColor(hex: "#A149FA")
         let shadow9 = TextShadow(offset: CGSize(width: 2, height: 2), color: sColor9, blur: 2, opacity: 1.0)
-        let style9 = TextStyle(shadow: shadow9,texture: tex.textures[47],fontName: "PRISTINA")
+        let style9 = TextStyle(shadow: shadow9,texture: texture[47],fontName: "PRISTINA")
         styles.append(style9)
         
         let sColor10 = UIColor.hexStringToUIColor(hex: "#D800A6")
@@ -182,7 +182,7 @@ class TextStyleLists{
         let sColor12 = UIColor.hexStringToUIColor(hex: "#2B3A55")
         let shadow12 = TextShadow(offset: CGSize(width: 6, height: 4), color: sColor12, blur: 8.0, opacity: 1.0)
         
-        let style12 = TextStyle(shadow: shadow12,texture: tex.textures[69], fontName: "El-RioLobo")
+        let style12 = TextStyle(shadow: shadow12,texture: texture[69], fontName: "El-RioLobo")
         styles.append(style12)
         
         
@@ -199,7 +199,7 @@ class TextStyleLists{
         
         
         let outLine14 = TextOutLine(color: UIColor.hexStringToUIColor(hex: "#06283D"), lineWidth: 16.0)
-        let style14 = TextStyle(outLine: outLine14,texture: tex.textures[89], fontName: "TobaccoRoadNF")
+        let style14 = TextStyle(outLine: outLine14,texture: texture[89], fontName: "TobaccoRoadNF")
         styles.append(style14)
         
         

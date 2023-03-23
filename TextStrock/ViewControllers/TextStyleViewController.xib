@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextStyleViewController" customModule="TextStrock" customModuleProvider="target">
             <connections>
+                <outlet property="applyStyleButton" destination="8ZC-Sc-tBe" id="e59-cs-zaV"/>
                 <outlet property="closeButton" destination="OrW-qE-aLK" id="SXB-U3-Mkc"/>
                 <outlet property="mainLabel" destination="Nt1-Mp-SxS" id="lm1-7e-T6G"/>
                 <outlet property="textEditButton" destination="YWv-0G-ExU" id="Gih-bJ-RNy"/>
@@ -80,16 +82,29 @@
                         <action selector="textEditButtonAction:" destination="-1" eventType="touchUpInside" id="a9A-i2-6X2"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZC-Sc-tBe">
+                    <rect key="frame" x="137.66666666666666" y="54" width="114.66666666666666" height="37"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Apply Style">
+                        <fontDescription key="titleFontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                        <color key="baseForegroundColor" red="0.5" green="0.1311869668" blue="0.29511631109999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="applyStyleButtonAction:" destination="-1" eventType="touchUpInside" id="299-O9-Dqa"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.84276094889999997" green="0.85290397220000003" blue="0.86078917980000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="BVc-Cx-rfL" secondAttribute="bottom" constant="60" id="1qk-s5-SQG"/>
                 <constraint firstItem="6eW-2c-36x" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="4mP-8p-RoV"/>
+                <constraint firstItem="8ZC-Sc-tBe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="85r-qJ-C34"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YWv-0G-ExU" secondAttribute="trailing" constant="24" id="9Wo-Be-onD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BVc-Cx-rfL" secondAttribute="trailing" id="E8u-DE-ma9"/>
                 <constraint firstItem="BVc-Cx-rfL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HRG-HZ-Tk3"/>
                 <constraint firstItem="YWv-0G-ExU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="Jk8-CA-dV4"/>
+                <constraint firstItem="8ZC-Sc-tBe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kgf-4v-pDI"/>
                 <constraint firstItem="6eW-2c-36x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="vh6-Ee-G7d"/>
             </constraints>
             <point key="canvasLocation" x="40" y="21"/>

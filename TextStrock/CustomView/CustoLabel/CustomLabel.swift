@@ -55,14 +55,15 @@ class CustomLabel: UILabel {
 //                let newColor = textTexture.getTextureUIColor(in: rect)
 //                self.textColor = newColor
 //            }
-        if strocktextureColor != nil{
-            //texture Add
-            if let strockTexture = strocktextureColor{
-                //let newColor = textTexture.getTextureUIColor(in: rect)
-                self.textColor = strockTexture
-            }
-            
-        } else if strockGradientColor != nil{
+//        if strocktextureColor != nil{
+//            //texture Add
+//            if let strockTexture = strocktextureColor{
+//                //let newColor = textTexture.getTextureUIColor(in: rect)
+//                self.textColor = strockTexture
+//            }
+//
+//        } else
+        if strockGradientColor != nil{
             //Gradient Color Add
             if let gColor = strockGradientColor{
                 let newColor = gColor.getGradientUIColor(in: rect,angle: strockGradientAngel)
@@ -110,6 +111,11 @@ class CustomLabel: UILabel {
     
     }
     
+    func fontSizeChange(fontSize:CGFloat){
+        let fontName = self.font.fontName
+        self.font = UIFont(name: fontName, size: fontSize)
+    }
+    
     func strockSizeChange(value:CGFloat){
         self.strocklineWidth = value
         self.setNeedsDisplay()
@@ -131,7 +137,6 @@ class CustomLabel: UILabel {
     }
     
     func textColorChange(color:UIColor){
-        //print("color = \(color)")
         self.textColor = color
         texture = nil
         textGradientColor = nil
@@ -158,29 +163,29 @@ class CustomLabel: UILabel {
         setNeedsDisplay()
     }
     
-    func textStrockTextureChange(textTexture:Texture){
-        
-        self.strockGradientColor = nil
-        
-//        self.textColor = nil
-//        textGradientColor = nil
-//        textGradientAngel = 0.0
+//    func textStrockTextureChange(textTexture:Texture){
+//
+//        self.strockGradientColor = nil
+//
+////        self.textColor = nil
+////        textGradientColor = nil
+////        textGradientAngel = 0.0
+//
+//        strocktexture = textTexture
+//        setNeedsDisplay()
+//    }
     
-        strocktexture = textTexture
-        setNeedsDisplay()
-    }
-    
-    func textStrockTextureChange(textTextureColor:UIColor?){
-        
-        self.strockGradientColor = nil
-        
-//        self.textColor = nil
-//        textGradientColor = nil
-//        textGradientAngel = 0.0
-    
-        strocktextureColor = textTextureColor
-        setNeedsDisplay()
-    }
+//    func textStrockTextureChange(textTextureColor:UIColor?){
+//
+//        self.strockGradientColor = nil
+//
+////        self.textColor = nil
+////        textGradientColor = nil
+////        textGradientAngel = 0.0
+//
+//        strocktextureColor = textTextureColor
+//        setNeedsDisplay()
+//    }
     
     
 

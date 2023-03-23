@@ -7,5 +7,9 @@ target 'TextStrock' do
 
   # Pods for TextStrock
   pod 'SnapKit', '~> 5.6.0'
+  pod 'HandySwift'
+  pod 'HandyUIKit'
+
+
 
 end

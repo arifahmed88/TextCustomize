@@ -29,7 +29,7 @@ class BlendBarView: UIView {
     
     let collectionViewCellIdentifier = "fontBarCollectionViewCellIdentifier"
     
-    var collectionViewPreviousSelectedIndex = IndexPath(item: -1, section: 0)
+    var collectionViewPreviousSelectedIndex = IndexPath(item: 0, section: 0)
     
     var blendModes = {
         var modes:[String] = ["None"]
@@ -54,6 +54,9 @@ class BlendBarView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         viewSetUp()
+        
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,6 +70,10 @@ class BlendBarView: UIView {
         backgroundColor = .clear
         viewConstrainSet()
         collectionviewConfigure()
+        
+        for mode in blendModes {
+            print("\(mode) ")
+        }
     }
     
     
@@ -79,6 +86,11 @@ class BlendBarView: UIView {
             make.left.equalTo(self.snp.left)
             make.right.equalTo(self.snp.right)
         }
+    }
+    
+    func collectionViewReset(){
+        collectionViewPreviousSelectedIndex = IndexPath(item: 0, section: 0)
+        collectionView.reloadData()
     }
     
     
@@ -103,16 +115,19 @@ extension BlendBarView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as! FontBarCollectionViewCell
-        cell.layer.borderWidth = 1.0
-        cell.layer.borderColor = UIColor.hexStringToUIColor(hex: "#FB2576").cgColor
+//        cell.layer.borderWidth = 1.0
+//        cell.layer.borderColor = UIColor.hexStringToUIColor(hex: "#FB2576").cgColor
         let blendMode = blendModes[indexPath.item]
+        
         
         
         var isSelected = false
         if indexPath == collectionViewPreviousSelectedIndex{
             isSelected = true
         }
-        cell.setCell(text: blendMode, isSelected: isSelected)
+        
+        let parsedMode = blendMode.replacingOccurrences(of: "BlendMode", with: "")
+        cell.setCell(text: parsedMode, isSelected: isSelected)
         return cell
     }
     
@@ -139,11 +154,11 @@ extension BlendBarView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let text = blendModes[indexPath.item]
+        let parsedText = text.replacingOccurrences(of: "BlendMode", with: "")
         
-        let itemSize = text.size(withAttributes: [
+        let itemSize = parsedText.size(withAttributes: [
             NSAttributedString.Key.font : UIFont(name: "Quicksand-Medium", size: 16) ?? UIFont.boldSystemFont(ofSize: 16)
         ])
-        
         
         return CGSize(width: itemSize.width+20, height: collectionView.bounds.height)
     }

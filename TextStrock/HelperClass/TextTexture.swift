@@ -35,17 +35,23 @@ class Texture{
 class TextTexture{
     
     var textures:[Texture] = []
+    var backgrounds:[Texture] = []
     init(){
         loadImagesFromBundel()
     }
     
     func loadImagesFromBundel(){
-        let folderURL = Bundle.main.paths(forResourcesOfType: "jpg", inDirectory: nil)
-        //print("folderURL = \(folderURL.count)")
-        for item in folderURL {
+        let jpgFolderURL = Bundle.main.paths(forResourcesOfType: "jpg", inDirectory: nil)
+        let pngFolderURL = Bundle.main.paths(forResourcesOfType: "png", inDirectory: nil)
+        
+        for item in pngFolderURL {
             let texture = Texture(imageUrl: item)
             textures.append(texture)
-            //print("folderURL = \(item)")
+        }
+        
+        for item in jpgFolderURL {
+            let texture = Texture(imageUrl: item)
+            backgrounds.append(texture)
         }
     }
 }

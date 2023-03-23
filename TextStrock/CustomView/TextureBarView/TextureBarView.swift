@@ -75,7 +75,7 @@ class TextureBarView: UIView {
 extension TextureBarView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return textTextures.textures.count
+        return textTextures.backgrounds.count
         
     }
     
@@ -88,11 +88,11 @@ extension TextureBarView: UICollectionViewDataSource {
         }
         cell.setupCell(isSelected: isSelected)
         
-        if indexPath.item >= textTextures.textures.count{
+        if indexPath.item >= textTextures.backgrounds.count{
             cell.imageView.image = UIImage(named: "w152")
            // cell.colorView.backgroundColor = .gray
         } else {
-            let image = textTextures.textures[indexPath.item].getImage() //colorList.uiGradentColorList[indexPath.item].getGradientUIColor(in: cell.frame)
+            let image = textTextures.backgrounds[indexPath.item].getImage() //colorList.uiGradentColorList[indexPath.item].getGradientUIColor(in: cell.frame)
             cell.imageView.image = image
         }
         return cell
@@ -108,7 +108,7 @@ extension TextureBarView: UICollectionViewDataSource {
 
         if let currentCell = collectionView.cellForItem(at: indexPath) as? TextureBarViewCollectionViewCell{
             currentCell.cellSelectedAction()
-            delegate?.selectedTexture(texture: textTextures.textures[indexPath.item])
+            delegate?.selectedTexture(texture: textTextures.backgrounds[indexPath.item])
         }
 
     }

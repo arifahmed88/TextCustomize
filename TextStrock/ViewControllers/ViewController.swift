@@ -7,8 +7,14 @@
 
 import UIKit
 
+enum viewType:String{
+    case text = "Text"
+    case image = "Image"
+}
+
 class ViewController: UIViewController {
     
+    @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var BGImageView: UIImageView!
     @IBOutlet weak var blendBarView: BlendBarView!
     @IBOutlet weak var textureBarView: TextureBarView!
@@ -29,11 +35,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var fontSliderlabel: UILabel!
     @IBOutlet weak var transparentSwitch: UISwitch!
     
-    
     @IBOutlet weak var gradientSlider: UISlider!
     @IBOutlet weak var gradientSliderlabel: UILabel!
     
-    var picker:UIImagePickerController = UIImagePickerController()
+    @IBOutlet weak var textImageSelectSwitch: UISwitch!
+    
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var imageLabel: UILabel!
     
     var textInputView:TextInputView? = nil
     
@@ -50,6 +58,8 @@ class ViewController: UIViewController {
     var labelText = "ARIF AHMED"
     
     var isOutline = true
+    
+    var selectedView:viewType = .text
     
     var customLabel = {
         var label = CustomLabel(frame: .zero)
@@ -69,9 +79,20 @@ class ViewController: UIViewController {
         return label
     }()
     
+    var customImageView = {
+        let view = UIImageView()
+        view.backgroundColor = .clear
+        view.isUserInteractionEnabled = true
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        canvasView.isUserInteractionEnabled = true
         transparentSwitch.isOn = false
+        
+        customImageViewAdd()
         customLabelAdd()
         sliderInitialize()
         
@@ -87,7 +108,9 @@ class ViewController: UIViewController {
         customLabelResize()
         gestureAddInLabel()
         
-        picker.delegate = self
+        gestureAddInImageView()
+        
+        blendindViewTypeInit()
 
     }
     
@@ -124,6 +147,23 @@ class ViewController: UIViewController {
         gradientSliderlabel.text = "\(0)"
     }
     
+    func blendindViewTypeInit(){
+        textLabel.textColor = UIColor.hexStringToUIColor(hex: "#FB2576")
+        imageLabel.textColor = UIColor(red: 113/255, green: 113/255, blue: 113/255, alpha: 1)
+        textImageSelectSwitch.isOn = false
+    }
+    
+    func gestureAddInImageView(){
+        let panGesture = UIPanGestureRecognizer(target: self,action:#selector(panGestureAction(gesture:)))
+        panGesture.delegate = self
+        customImageView.addGestureRecognizer(panGesture)
+        
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(zoomImageView(gesture:)))
+        pinchGesture.delegate = self
+        customImageView.addGestureRecognizer(pinchGesture)
+        
+    }
+    
     func gestureAddInLabel(){
         let panGesture = UIPanGestureRecognizer(target: self,action:#selector(panGestureAction(gesture:)))
         panGesture.delegate = self
@@ -136,44 +176,71 @@ class ViewController: UIViewController {
     }
     
     @objc func panGestureAction(gesture: UIPanGestureRecognizer) {
-        
-        let translation = gesture.translation(in: customLabel)
+        guard let gestureView = gesture.view else {return}
+        let translation = gesture.translation(in: gestureView)
         switch gesture.state {
         case .began:
-            print("start")
+            //print("start")
             break
         case .ended, .cancelled, .failed:
-            print("End")
+            //print("End")
             break
         case .changed:
-            customLabel.center = CGPoint(x:self.customLabel.center.x + translation.x, y: self.customLabel.center.y + translation.y)
+            gestureView.center = CGPoint(x:gestureView.center.x + translation.x, y: gestureView.center.y + translation.y)
             
         default:
             break
         }
-        gesture.setTranslation(CGPoint.zero, in: self.customLabel)
+        gesture.setTranslation(CGPoint.zero, in: gestureView)
     }
     
     
+    @IBAction func textImageSelectSwitchAction(_ sender: UISwitch) {
+        if sender.isOn{
+            textLabel.textColor = UIColor(red: 113/255, green: 113/255, blue: 113/255, alpha: 1)
+            imageLabel.textColor = UIColor.hexStringToUIColor(hex: "#FB2576")
+            selectedView = .image
+        } else {
+            textLabel.textColor = UIColor.hexStringToUIColor(hex: "#FB2576")
+            imageLabel.textColor = UIColor(red: 113/255, green: 113/255, blue: 113/255, alpha: 1)
+            selectedView = .text
+        }
+        
+        blendBarView.collectionViewReset()
+        
+    }
+    
+    @IBAction func imageButtonAction(_ sender: Any) {
+        let vc = ImageSelectViewController()
+        vc.isFromBG = false
+        vc.delegate = self
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
     @IBAction func bgChangeButtonAction(_ sender: Any) {
         
-        picker.allowsEditing = false
-        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
-        present(picker, animated: true, completion: nil)
+        let vc = ImageSelectViewController()
+        vc.isFromBG = true
+        vc.delegate = self
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
-        
         let vc = TextStyleViewController()
+        vc.delegate = self
         vc.modalPresentationStyle = .overFullScreen
-        
         present(vc, animated: true)
     }
     
     
     @IBAction func curveButtonAction(_ sender: Any) {
+        
+        
         let vc = TextCurveViewController()
+//        let vc = MosaicViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
@@ -189,6 +256,24 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func zoomImageView(gesture: UIPinchGestureRecognizer) {
+        let newPinchScale = abs(gesture.scale)
+
+        switch gesture.state {
+        case .changed:
+            let center = customImageView.center
+            let width = customImageView.bounds.width * newPinchScale
+            let height = customImageView.bounds.height * newPinchScale
+            
+            customImageView.frame.size = CGSize(width: width, height: height)
+            customImageView.center = center
+            
+        default:
+            break
+        }
+        gesture.scale = 1.0
+    }
+    
     
     
     @objc func zoomCropFrameView(gesture: UIPinchGestureRecognizer) {
@@ -196,10 +281,10 @@ class ViewController: UIViewController {
 
         switch gesture.state {
         case .began:
-            print("start")
+//            print("start")
             break
         case .ended, .cancelled, .failed:
-            print("End")
+//            print("End")
             break
         case .changed:
             let center = customLabel.center
@@ -221,6 +306,13 @@ class ViewController: UIViewController {
         gesture.scale = 1.0
     }
     
+    func customImageViewAdd(){
+        customImageView.frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
+        let centerX = UIScreen.main.bounds.width*0.5
+        customImageView.center = CGPoint(x: centerX, y: 200)
+        canvasView.addSubview(customImageView)
+    }
+    
     
     func customLabelAdd(){
         customLabel.font = UIFont(name: fontname, size: CGFloat(fontSize))
@@ -232,7 +324,7 @@ class ViewController: UIViewController {
 //        customLabel.frame = CGRect(origin: .zero, size: CGSize(width: UIScreen.main.bounds.width*2, height: 200))
         customLabel.sizeToFit()
         customLabel.center = CGPoint(x: centerX, y: 200)
-        view.addSubview(customLabel)
+        canvasView.addSubview(customLabel)
     }
     
 //    var num = 1
@@ -278,6 +370,8 @@ class ViewController: UIViewController {
     }
     
     private func customLabelFontChange(value:CGFloat){
+        
+        
         customLabel.font = UIFont(name: fontname, size: value)
         customLabelResize()
     }
@@ -372,7 +466,8 @@ extension ViewController:TextureBarViewDelegate{
         
         let newColor = texture.getTextureUIColor(in: customLabel.bounds)
         
-        customLabel.textStrockTextureChange(textTextureColor: newColor)
+//        customLabel.textStrockTextureChange(textTextureColor: newColor)
+        customLabel.textTextureChange(textTexture: texture)
     }
     
     
@@ -433,45 +528,98 @@ extension ViewController: UIGestureRecognizerDelegate {
 
 extension ViewController:BlendBarViewDelegate{
     func blendModeChange(blendModeName: String?) {
-        print("arif")
-        if let blendModeName{
-            if blendModeName == "None"{
-                customLabel.layer.compositingFilter = nil
-            } else {
-                customLabel.layer.compositingFilter = blendModeName
+        
+        if selectedView == .text{
+            if let blendModeName{
+                if blendModeName == "None"{
+                    customLabel.layer.compositingFilter = nil
+                } else {
+                    customLabel.layer.compositingFilter = blendModeName
+                }
             }
-            
+        } else if selectedView == .image{
+            if let blendModeName{
+                if blendModeName == "None"{
+                    customImageView.layer.compositingFilter = nil
+                } else {
+                    customImageView.layer.compositingFilter = blendModeName
+                }
+            }
         }
+        
+        
+        
         
     }
 }
 
-
-///
-///
-///
-
-extension ViewController:UIImagePickerControllerDelegate,UIPopoverControllerDelegate,UINavigationControllerDelegate {
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        guard let image = info[.originalImage] as? UIImage else {
-            print("error")
-            return
+extension ViewController:ImageSelectViewControllerDelegate{
+    func selectedImage(image: UIImage?, isForBG: Bool) {
+        if isForBG{
+            BGImageView.image = image
+        } else{
+            customImageView.image = image
         }
-                
-        dismiss(animated: true, completion: {
-            self.BGImageView.image = image
-        })
     }
-     
+}
+
+
+extension ViewController:TextStyleViewControllerDelegate{
+    func textStyleApply(style: TextStyle?) {
+        if let style{
+            applyStyle(style: style)
+        }
+    }
+    
+    
+    func applyStyle(style:TextStyle){
+        
+        if let fontName = style.fontName {
+            customLabel.font = UIFont(name: fontName, size: CGFloat(fontSize))
+        }
+        
+        if let fontcolor = style.textColor {
+            customLabel.textColorChange(color: fontcolor)
+        }
+        
+        if let fontGradientColor = style.gradientColor {
+            customLabel.textGradientColorAdd(gColor: fontGradientColor.gradientColor,angel: fontGradientColor.angle)
+        }else {
+            customLabel.textGradientColor = nil
+        }
+        
+        if let texture = style.texture {
+            customLabel.textTextureChange(textTexture: texture)
+        } else {
+            customLabel.texture = nil
+        }
+        
+        if let shadow = style.shadow {
+            customLabel.layer.shadowColor = shadow.color.cgColor
+            customLabel.layer.shadowOffset = shadow.offset
+            customLabel.layer.shadowRadius = shadow.blur
+            customLabel.layer.shadowOpacity = Float(shadow.opacity)
+        } else {
+            customLabel.layer.shadowColor = UIColor.clear.cgColor
+            customLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+            customLabel.layer.shadowRadius = 0.0
+            customLabel.layer.shadowOpacity = 0.0
+        }
+        
+        if let outLine = style.outLine {
+            customLabel.strockSizeChange(value: outLine.lineWidth)
+            if let oColor = outLine.color{
+                customLabel.strockColorChange(color: oColor)
+            }
+            if let ogColor = outLine.gragientColor{
+                customLabel.strockGradientColorAdd(gColor: ogColor)
+            }
+            
+        } else{
+            customLabel.strockSizeChange(value: 0.0)
+            customLabel.strockColorChange(color: .white)
+        }
+        
+        customLabelResize()
+    }
 }
