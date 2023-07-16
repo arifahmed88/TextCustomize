@@ -8,6 +8,9 @@
 import UIKit
 import HandySwift
 import HandyUIKit
+import SnapKit
+import AnimatedGradientView
+
 
 public extension UIColor {
     func colorWithBrightness(brightness: CGFloat) -> UIColor {
@@ -27,14 +30,12 @@ public extension UIColor {
 class MosaicViewController: UIViewController {
     @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var filterBarView: BlendBarView!
-    @IBOutlet weak var pixlatedView: UIView!
+    @IBOutlet weak var promoView: UIView!
     
 //    let magnifyingGlass = MagnifyingGlassView(offset: CGPoint(x: 0.0, y: 0.0), radius: 60.0, scale: 4.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pixlatedView.contentScaleFactor = 0.1
-    
         gestureAddInPixlatedView()
         
 //        let today = Date()
@@ -72,13 +73,11 @@ class MosaicViewController: UIViewController {
 ////        rgbaColor.rgb
 //        let hlcaColor = UIColor(hue: 180/360, saturation: 30/100, brightness: 125/128, alpha: 1)
         
-        
-        
-        
-        
-        pixlatedView.backgroundColor = color.colorWithBrightness(brightness: 0.5)
-        
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        promoviewAnimationadd()
     }
     
 
@@ -110,12 +109,42 @@ class MosaicViewController: UIViewController {
 ////        magnifyingGlass.magnifiedView = nil
 //    }
     
+    
+    private func promoviewAnimationadd(){
+        let cornerRadius = CGFloat(8.0)
+        promoView.clipsToBounds = true
+        promoView.layer.cornerRadius = cornerRadius
+        let offset = CGFloat(4)
+        let gFrame = CGRect(x: offset, y: offset, width: promoView.bounds.width-2*offset, height: promoView.bounds.height-2*offset)
+        
+        let animatedGradient = AnimatedGradientView(frame: gFrame)
+        animatedGradient.direction = .up
+        animatedGradient.animationValues = [(colors: ["#46D8FF", "#CA53FF"], .up, .axial),(colors: ["#46D8FF", "#CA53FF","#46D8FF"], .right, .axial),(colors: ["#CA53FF", "#46D8FF"], .down, .axial),(colors: ["#CA53FF", "#46D8FF","#CA53FF"], .left, .axial)]
+        
+        animatedGradient.animationDuration = 1
+        animatedGradient.autoAnimate = true
+        animatedGradient.autoRepeat = true
+        animatedGradient.clipsToBounds = true
+        animatedGradient.layer.cornerRadius = cornerRadius
+        promoView.insertSubview(animatedGradient, at: 0)
+        animatedGradient.startAnimating()
+        
+        
+        let moffset = offset + 10
+        let mFrame = CGRect(x: moffset, y: moffset, width: promoView.bounds.width-2*moffset, height: promoView.bounds.height-2*moffset)
+        
+        let middleView = UIView(frame: mFrame)
+        middleView.backgroundColor = UIColor.hexStringToUIColor(hex: "#051323")
+        middleView.clipsToBounds = true
+        middleView.layer.cornerRadius = cornerRadius-1.0
+        promoView.insertSubview(middleView, aboveSubview: animatedGradient)
+    }
+    
     @IBAction func sliderAction(_ sender: UISlider) {
         guard let image = UIImage(named: "w162.jpg") else {return}
         let color = UIColor(patternImage: image)
         
         let a = color.change(.brightness, to: CGFloat(sender.value))
-        pixlatedView.backgroundColor = a
     }
     
     func gestureAddInPixlatedView(){
@@ -134,8 +163,8 @@ class MosaicViewController: UIViewController {
         case .changed:
 //            let point = CGPoint(x:magnifyingGlass.center.x + translation.x, y: magnifyingGlass.center.y + translation.y)
 //            magnifyingGlass.magnify(at: point)
-            let point = CGPoint(x:pixlatedView.center.x + translation.x, y: pixlatedView.center.y + translation.y)
-            pixlatedView.center = point
+//            let point = CGPoint(x:pixlatedView.center.x + translation.x, y: pixlatedView.center.y + translation.y)
+//            pixlatedView.center = point
             break
             
         default:

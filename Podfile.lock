@@ -1,24 +1,28 @@
 PODS:
+  - AnimatedGradientView (3.1.0)
   - HandySwift (3.2.1)
   - HandyUIKit (1.9.3)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - AnimatedGradientView
   - HandySwift
   - HandyUIKit
-  - SnapKit (~> 5.6.0)
+  - SnapKit
 
 SPEC REPOS:
   trunk:
+    - AnimatedGradientView
     - HandySwift
     - HandyUIKit
     - SnapKit
 
 SPEC CHECKSUMS:
+  AnimatedGradientView: f249740238c6b491a10d505ab06bb98d897ca3a7
   HandySwift: 091d23b81d59b577029516ff3e03ce70fea6ffbb
   HandyUIKit: 9183e92e01d771d67deea53463a4adc938d9d4c3
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 02e9654afcca611419be651bdde1ee8ce00b1a0a
+PODFILE CHECKSUM: cabbedc34ff01eef76944dafc3a985aa1e91d65b
 
 COCOAPODS: 1.11.3

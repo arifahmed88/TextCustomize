@@ -176,11 +176,13 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AnimatedGradientView/AnimatedGradientView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HandySwift/HandySwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HandyUIKit/HandyUIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AnimatedGradientView/AnimatedGradientView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HandySwift/HandySwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HandyUIKit/HandyUIKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"

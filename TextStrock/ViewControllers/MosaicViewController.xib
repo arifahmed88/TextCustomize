@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="canvasView" destination="Zqw-uF-xfZ" id="fOK-fB-lfZ"/>
                 <outlet property="filterBarView" destination="wyY-Rp-HPz" id="vCV-f8-Rjw"/>
-                <outlet property="pixlatedView" destination="gKX-5d-G8x" id="w8Y-S3-Pyi"/>
+                <outlet property="promoView" destination="gKX-5d-G8x" id="LO8-27-jRt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,19 +28,13 @@
                         <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w124.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wzY-Yh-Rvf" userLabel="imageView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         </imageView>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKX-5d-G8x" userLabel="PixlatedView">
-                            <rect key="frame" x="87" y="384" width="240" height="128"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ArifAhmed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cx-2S-IyR">
-                                    <rect key="frame" x="27" y="54" width="145" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="30"/>
-                                    <color key="textColor" systemColor="systemYellowColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKX-5d-G8x" userLabel="PixlatedView">
+                            <rect key="frame" x="87" y="328" width="240" height="240"/>
                             <color key="backgroundColor" red="0.98431372549999996" green="0.1450980392" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="3vu-wO-HVv"/>
+                                <constraint firstAttribute="width" secondItem="gKX-5d-G8x" secondAttribute="height" id="yyo-dg-ejo"/>
+                            </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hello hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="int-oA-vBy">
                             <rect key="frame" x="60" y="723" width="85" height="46"/>
@@ -60,9 +54,11 @@
                     <constraints>
                         <constraint firstItem="BSt-3x-ld8" firstAttribute="leading" secondItem="Zqw-uF-xfZ" secondAttribute="leading" id="5ES-yj-V6r"/>
                         <constraint firstItem="wzY-Yh-Rvf" firstAttribute="top" secondItem="Zqw-uF-xfZ" secondAttribute="top" id="5tl-iq-8pI"/>
+                        <constraint firstItem="gKX-5d-G8x" firstAttribute="centerY" secondItem="Zqw-uF-xfZ" secondAttribute="centerY" id="Avh-WQ-Nl6"/>
                         <constraint firstAttribute="trailing" secondItem="BSt-3x-ld8" secondAttribute="trailing" id="I9K-0T-AjT"/>
                         <constraint firstAttribute="trailing" secondItem="wzY-Yh-Rvf" secondAttribute="trailing" id="KKp-Zu-2S7"/>
                         <constraint firstAttribute="bottom" secondItem="wzY-Yh-Rvf" secondAttribute="bottom" id="Ty1-XE-5b6"/>
+                        <constraint firstItem="gKX-5d-G8x" firstAttribute="centerX" secondItem="Zqw-uF-xfZ" secondAttribute="centerX" id="cRi-jo-v0B"/>
                         <constraint firstItem="wzY-Yh-Rvf" firstAttribute="leading" secondItem="Zqw-uF-xfZ" secondAttribute="leading" id="dh8-YZ-pdY"/>
                         <constraint firstAttribute="bottom" secondItem="BSt-3x-ld8" secondAttribute="bottom" constant="100" id="rmd-5V-rMh"/>
                     </constraints>
@@ -93,9 +89,6 @@
         <image name="w124.jpg" width="288" height="288"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

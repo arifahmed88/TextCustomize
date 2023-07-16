@@ -7,111 +7,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D3B204BA-85D9-490A-BC33-FCA24B27571D"
+            uuid = "388E24EC-30D7-4411-8920-797BD11E1E23"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewController.swift"
+            filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "gestureAddInLabel()"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "getRadiusForLabel()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FED59B66-F125-4C7F-BBFB-07EE535092A0"
+            uuid = "A0580AB1-AEFF-42BE-8838-111FBD629D6D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewController.swift"
+            filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "gradientSliderAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E4E6727C-2DAD-4241-A762-43D77DEF5691"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/GradientColorVarView/UIGradientColorList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "GradientColor"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4E698E59-073D-4BC6-81FD-78A50376B554"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
-            landmarkName = "customLabelFontChange(value:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D8B60BBC-7E8C-4147-B5BB-3282DA3001CA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/FontTypographyAdjustViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "panGestureAction(gesture:)"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "getRadiusForLabel()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D8B60BBC-7E8C-4147-B5BB-3282DA3001CA - 24c90ebffdec004a"
-                  shouldBeEnabled = "No"
+                  uuid = "A0580AB1-AEFF-42BE-8838-111FBD629D6D - e53008d442065cb5"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.FontTypographyAdjustViewController.panGestureAction(gesture: __C.UIPanGestureRecognizer) -&gt; ()"
+                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
                   moduleName = "TextStrock"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/ViewControllers/FontTypographyAdjustViewController.swift"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "116">
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "1424">
                </Location>
                <Location
-                  uuid = "D8B60BBC-7E8C-4147-B5BB-3282DA3001CA - 24c90ebffdec004a"
-                  shouldBeEnabled = "No"
+                  uuid = "A0580AB1-AEFF-42BE-8838-111FBD629D6D - e53008d442065c92"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.FontTypographyAdjustViewController.panGestureAction(gesture: __C.UIPanGestureRecognizer) -&gt; ()"
+                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
                   moduleName = "TextStrock"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/ViewControllers/FontTypographyAdjustViewController.swift"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "168">
+                  startingLineNumber = "218"
+                  endingLineNumber = "218"
+                  offsetFromSymbolStart = "1424">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -119,159 +71,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A49230C1-441F-496E-AF62-F691624BCADB"
+            uuid = "02EF0DC3-0753-4224-A20C-B3AEB32DAB47"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/FontTypographyAdjustViewController.swift"
+            filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DD55B52F-9700-4AA7-8D65-30B9CA9C8E14"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/FontTypographyAdjustViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "zoomCropFrameView(gesture:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7F9C8FB3-49C7-4BC7-9A54-1CA4DBE42805"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399"
-            landmarkName = "transparentSwitchAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7C00C299-DF75-4162-8EA5-5815A03E9683"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "405"
-            endingLineNumber = "405"
-            landmarkName = "transparentSwitchAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "41E038E1-6D65-41BE-AE66-937FD81B8FCF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "443"
-            endingLineNumber = "443"
-            landmarkName = "selectedGradientColor(gColor:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "432987C2-0CF9-48E1-8660-3627993B7A8F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
-            landmarkName = "transparentSwitchAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D455FF62-BF36-44BD-A5EB-5432BD04F00E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/CustoLabel/CustomLabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "textGradientColorAdd(gColor:angel:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BFAFF0DA-8B67-4560-8A0A-667F6C6B7E04"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/CustoLabel/CustomLabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "drawText(in:)"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "getRadiusForLabel()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "BFAFF0DA-8B67-4560-8A0A-667F6C6B7E04 - 655b905782c2e81f"
-                  shouldBeEnabled = "No"
+                  uuid = "02EF0DC3-0753-4224-A20C-B3AEB32DAB47 - e53008d442065a68"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.CustomLabel.drawText(in: __C.CGRect) -&gt; ()"
+                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
                   moduleName = "TextStrock"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/CustomView/CustoLabel/CustomLabel.swift"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "860">
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
+                  offsetFromSymbolStart = "396">
                </Location>
                <Location
-                  uuid = "BFAFF0DA-8B67-4560-8A0A-667F6C6B7E04 - 655b905782c2e81f"
-                  shouldBeEnabled = "No"
+                  uuid = "02EF0DC3-0753-4224-A20C-B3AEB32DAB47 - e53008d442065a68"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.CustomLabel.drawText(in: __C.CGRect) -&gt; ()"
+                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
                   moduleName = "TextStrock"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/CustomView/CustoLabel/CustomLabel.swift"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "888">
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  uuid = "02EF0DC3-0753-4224-A20C-B3AEB32DAB47 - e53008d4420659ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
+                  moduleName = "TextStrock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "128">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -279,385 +134,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "65E38333-6F8A-4B8D-A737-4221243DE9F2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/CustoLabel/CustomLabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "drawText(in:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1806FC53-6018-45BE-A054-669EA60EBF4D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/CustoLabel/CustomLabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "drawText(in:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "19FC6513-6405-4081-9C42-BC1B8D349AB1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/CustoLabel/CustomLabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "drawText(in:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "406A184C-BE6A-4E81-B130-C31FE961D7BD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/CustoLabel/CustomLabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "textColorChange(color:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B503B663-3A39-4ED8-A1A3-21AD4D99DFC6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/TextStyleViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "panGestureAction(gesture:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "57841E47-1ADC-4CE0-8CD7-BA78C5034BA5"
+            uuid = "F68EA76D-570E-4163-AE20-1A74EBEE4E26"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "viewDidLayoutSubviews()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1ED536C3-D3D2-4816-9973-BA43ABB36B9B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "curveLabelResize()"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "sliderAction(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1ED536C3-D3D2-4816-9973-BA43ABB36B9B - f1df44e477ef11a6"
+                  uuid = "F68EA76D-570E-4163-AE20-1A74EBEE4E26 - 3e67ea82e626f437"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.TextCurveViewController.curveLabelResize() -&gt; ()"
+                  symbolName = "TextStrock.TextCurveViewController.sliderAction(__C.UISlider) -&gt; ()"
                   moduleName = "TextStrock"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/ViewControllers/TextCurveViewController.swift"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/ViewControllers/TextCurveViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "133"
-                  endingLineNumber = "133"
-                  offsetFromSymbolStart = "60">
+                  startingLineNumber = "264"
+                  endingLineNumber = "264"
+                  offsetFromSymbolStart = "104">
                </Location>
                <Location
-                  uuid = "1ED536C3-D3D2-4816-9973-BA43ABB36B9B - f1df44e477ef11a6"
+                  uuid = "F68EA76D-570E-4163-AE20-1A74EBEE4E26 - 3e67ea82e626f7cd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.TextCurveViewController.curveLabelResize() -&gt; ()"
+                  symbolName = "TextStrock.TextCurveViewController.sliderAction(__C.UISlider) -&gt; ()"
                   moduleName = "TextStrock"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/ViewControllers/TextCurveViewController.swift"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/ViewControllers/TextCurveViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "133"
-                  endingLineNumber = "133"
-                  offsetFromSymbolStart = "132">
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9165B97C-6CBC-4629-81CC-936F6A6AB7D3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "gestureAddInCurveLabel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2E357BCB-A3C8-4C3C-928A-4C2FAF74B37A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "469"
-            endingLineNumber = "469"
-            landmarkName = "selectedTexture(texture:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DD68CC27-070D-4F9F-99B3-5F9383D716D2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/FontBarView/TempFontView/FontFamilyView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "init?(coder:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "59F72FF6-AE01-4554-9FCE-54AB7E14D755"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "panGestureAction(gesture:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "263B3CE5-F414-47AE-88EC-FC05A4D846D0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/TextStyleViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "applyStyleButtonAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A10FC907-2CF9-48FF-A5CD-F307B06C1993"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "569"
-            endingLineNumber = "569"
-            landmarkName = "textStyleApply(style:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A10FC907-2CF9-48FF-A5CD-F307B06C1993 - 492e0c4fa2078629"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.ViewController.textStyleApply(style: Swift.Optional&lt;TextStrock.TextStyle&gt;) -&gt; ()"
-                  moduleName = "TextStrock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/ViewControllers/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "565"
-                  endingLineNumber = "565"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "A10FC907-2CF9-48FF-A5CD-F307B06C1993 - 492e0c4fa2078629"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.ViewController.textStyleApply(style: Swift.Optional&lt;TextStrock.TextStyle&gt;) -&gt; ()"
-                  moduleName = "TextStrock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/ViewControllers/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "565"
-                  endingLineNumber = "565"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0F1E523A-E469-40A9-B6BE-69E96559841B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "570"
-            endingLineNumber = "570"
-            landmarkName = "textStyleApply(style:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6D79B67F-34DE-4739-9B57-3B9CE5338C94"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "572"
-            endingLineNumber = "572"
-            landmarkName = "textStyleApply(style:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4FDD456F-EAEE-42FA-893F-3DA588113FF2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "577"
-            endingLineNumber = "577"
-            landmarkName = "applyStyle(style:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4FDD456F-EAEE-42FA-893F-3DA588113FF2 - d0f7ee87c4419691"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.ViewController.applyStyle(style: TextStrock.TextStyle) -&gt; ()"
-                  moduleName = "TextStrock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/ViewControllers/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "577"
-                  endingLineNumber = "577"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "4FDD456F-EAEE-42FA-893F-3DA588113FF2 - d0f7ee87c4419691"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.ViewController.applyStyle(style: TextStrock.TextStyle) -&gt; ()"
-                  moduleName = "TextStrock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/TextStrock/TextStrock/ViewControllers/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "577"
-                  endingLineNumber = "577"
-                  offsetFromSymbolStart = "148">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F1439238-B8CF-4CE7-87A2-828A70F0B48B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/ViewControllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "578"
-            endingLineNumber = "578"
-            landmarkName = "applyStyle(style:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CE6B53FD-E85A-4448-BF86-5AE743758E75"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/TextureBarView/TextureBarView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

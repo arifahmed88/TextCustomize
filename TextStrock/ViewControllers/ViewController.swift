@@ -122,7 +122,6 @@ class ViewController: UIViewController {
         selectedGradientColor(gColor: gColor)
         gradientTextColor = gColor
         textColor = nil
-        
 //        fontChange(fontName: fontBarView.fontList[1].fontName)
     }
     
@@ -229,8 +228,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
-        let vc = TextStyleViewController()
-        vc.delegate = self
+        let vc = MosaicViewController()
+//        vc.delegate = self
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

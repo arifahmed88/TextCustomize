@@ -112,7 +112,7 @@ extension FontBarView: UICollectionViewDataSource {
 
         if let currentCell = collectionView.cellForItem(at: indexPath) as? FontBarCollectionViewCell{
             currentCell.cellSelectedAction()
-            delegate?.fontChange(fontName: fontList[indexPath.item].fontName)
+            //delegate?.fontChange(fontName: fontList[indexPath.item].fontName)
         }
 
     }
@@ -131,7 +131,7 @@ extension FontBarView: UICollectionViewDelegate {
 //            let previousSelelectedIndexPath = selectedIndexPath,
             centerIndex.item != collectionViewPreviousSelectedIndex.item
         {
-            print("arif = \(centerIndex)")
+           // print("arif = \(centerIndex)")
             let previousIndexPath = IndexPath(item: collectionViewPreviousSelectedIndex.item, section: collectionViewPreviousSelectedIndex.section)
             collectionViewPreviousSelectedIndex = centerIndex
 

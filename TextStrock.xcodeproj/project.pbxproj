@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		605D33A3711DD8C0D1423B27 /* Pods_TextStrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 610FE8B7A7B61DE9A083BB8C /* Pods_TextStrock.framework */; };
 		9E04C42D294886C8000C71FF /* UIImage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E04C42C294886C8000C71FF /* UIImage+Extention.swift */; };
 		9E04C4E529489530000C71FF /* wc new 1019.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E04C42F29489530000C71FF /* wc new 1019.jpg */; };
 		9E04C4E629489530000C71FF /* w146.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E04C43029489530000C71FF /* w146.jpg */; };
@@ -546,12 +545,12 @@
 		9EE580F6292A586200F79D98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EE580F4292A586200F79D98 /* LaunchScreen.storyboard */; };
 		9EFC6D3A2978108F009F36CD /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFC6D382978108F009F36CD /* ImageSelectViewController.swift */; };
 		9EFC6D3B2978108F009F36CD /* ImageSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFC6D392978108F009F36CD /* ImageSelectViewController.xib */; };
+		C1969575C9824ECF14754B68 /* Pods_TextStrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA36893EB7895A6C82C5BDC8 /* Pods_TextStrock.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		47B6752CFF3E07C758CA658B /* Pods-TextStrock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextStrock.debug.xcconfig"; path = "Target Support Files/Pods-TextStrock/Pods-TextStrock.debug.xcconfig"; sourceTree = "<group>"; };
-		543D34E7889CC342249FFE27 /* Pods-TextStrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextStrock.release.xcconfig"; path = "Target Support Files/Pods-TextStrock/Pods-TextStrock.release.xcconfig"; sourceTree = "<group>"; };
-		610FE8B7A7B61DE9A083BB8C /* Pods_TextStrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextStrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FB22BA2C46EF02BC8531F99 /* Pods-TextStrock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextStrock.release.xcconfig"; path = "Target Support Files/Pods-TextStrock/Pods-TextStrock.release.xcconfig"; sourceTree = "<group>"; };
+		73E67278EA9034D31725B485 /* Pods-TextStrock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextStrock.debug.xcconfig"; path = "Target Support Files/Pods-TextStrock/Pods-TextStrock.debug.xcconfig"; sourceTree = "<group>"; };
 		9E04C42C294886C8000C71FF /* UIImage+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extention.swift"; sourceTree = "<group>"; };
 		9E04C42F29489530000C71FF /* wc new 1019.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wc new 1019.jpg"; sourceTree = "<group>"; };
 		9E04C43029489530000C71FF /* w146.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = w146.jpg; sourceTree = "<group>"; };
@@ -760,7 +759,7 @@
 		9E6534812933494400CA0E11 /* Magical Signature Script.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Magical Signature Script.otf"; sourceTree = "<group>"; };
 		9E6534822933494400CA0E11 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		9E6534832933494400CA0E11 /* Sandrina.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandrina.ttf; sourceTree = "<group>"; };
-		9E6534842933494400CA0E11 /* PER_____.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PER_____.TTF"; sourceTree = "<group>"; };
+		9E6534842933494400CA0E11 /* PER_____.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = PER_____.TTF; sourceTree = "<group>"; };
 		9E6534852933494400CA0E11 /* Azedo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Azedo-Light.otf"; sourceTree = "<group>"; };
 		9E6534862933494400CA0E11 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		9E6534872933494400CA0E11 /* LEXIB__.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LEXIB__.ttf; sourceTree = "<group>"; };
@@ -895,7 +894,7 @@
 		9E6535082933494400CA0E11 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		9E6535092933494400CA0E11 /* Gorgone Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gorgone Italic.ttf"; sourceTree = "<group>"; };
 		9E65350A2933494400CA0E11 /* Yesteryear-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yesteryear-Regular.ttf"; sourceTree = "<group>"; };
-		9E65350B2933494400CA0E11 /* NEON____.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NEON____.TTF"; sourceTree = "<group>"; };
+		9E65350B2933494400CA0E11 /* NEON____.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = NEON____.TTF; sourceTree = "<group>"; };
 		9E65350C2933494400CA0E11 /* CooperHewitt-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Heavy.otf"; sourceTree = "<group>"; };
 		9E65350D2933494400CA0E11 /* BebasNeue Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Bold.otf"; sourceTree = "<group>"; };
 		9E65350E2933494400CA0E11 /* Cardinal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cardinal.ttf; sourceTree = "<group>"; };
@@ -981,7 +980,7 @@
 		9E65355E2933494400CA0E11 /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
 		9E65355F2933494400CA0E11 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
 		9E6535602933494400CA0E11 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
-		9E6535612933494400CA0E11 /* WELTU___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WELTU___.TTF"; sourceTree = "<group>"; };
+		9E6535612933494400CA0E11 /* WELTU___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = WELTU___.TTF; sourceTree = "<group>"; };
 		9E6535622933494400CA0E11 /* Kristi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kristi-Regular.ttf"; sourceTree = "<group>"; };
 		9E6535632933494400CA0E11 /* Mellows.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mellows.ttf; sourceTree = "<group>"; };
 		9E6535642933494400CA0E11 /* FREESCPT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FREESCPT.TTF; sourceTree = "<group>"; };
@@ -1094,6 +1093,7 @@
 		9EE580F7292A586200F79D98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EFC6D382978108F009F36CD /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
 		9EFC6D392978108F009F36CD /* ImageSelectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSelectViewController.xib; sourceTree = "<group>"; };
+		FA36893EB7895A6C82C5BDC8 /* Pods_TextStrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextStrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1101,7 +1101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				605D33A3711DD8C0D1423B27 /* Pods_TextStrock.framework in Frameworks */,
+				C1969575C9824ECF14754B68 /* Pods_TextStrock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1111,16 +1111,16 @@
 		13B6E5B96C6879CC5AA40877 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				47B6752CFF3E07C758CA658B /* Pods-TextStrock.debug.xcconfig */,
-				543D34E7889CC342249FFE27 /* Pods-TextStrock.release.xcconfig */,
+				73E67278EA9034D31725B485 /* Pods-TextStrock.debug.xcconfig */,
+				4FB22BA2C46EF02BC8531F99 /* Pods-TextStrock.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		76693770898F08F6D83F2077 /* Frameworks */ = {
+		459E1F3AFE250BBAA2C1FBC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				610FE8B7A7B61DE9A083BB8C /* Pods_TextStrock.framework */,
+				FA36893EB7895A6C82C5BDC8 /* Pods_TextStrock.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1819,7 +1819,7 @@
 				9EE580E8292A586000F79D98 /* TextStrock */,
 				9EE580E7292A586000F79D98 /* Products */,
 				13B6E5B96C6879CC5AA40877 /* Pods */,
-				76693770898F08F6D83F2077 /* Frameworks */,
+				459E1F3AFE250BBAA2C1FBC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1858,11 +1858,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EE580FA292A586200F79D98 /* Build configuration list for PBXNativeTarget "TextStrock" */;
 			buildPhases = (
-				0C7C31B01E43530CEA27BAF7 /* [CP] Check Pods Manifest.lock */,
+				5583A16FAB5C27D6D9329A27 /* [CP] Check Pods Manifest.lock */,
 				9EE580E2292A586000F79D98 /* Sources */,
 				9EE580E3292A586000F79D98 /* Frameworks */,
 				9EE580E4292A586000F79D98 /* Resources */,
-				ACE8C9B528EA1DD06330527B /* [CP] Embed Pods Frameworks */,
+				B110EE5961BC7ADE9C4EA500 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2418,7 +2418,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C7C31B01E43530CEA27BAF7 /* [CP] Check Pods Manifest.lock */ = {
+		5583A16FAB5C27D6D9329A27 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2440,7 +2440,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ACE8C9B528EA1DD06330527B /* [CP] Embed Pods Frameworks */ = {
+		B110EE5961BC7ADE9C4EA500 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2642,7 +2642,7 @@
 		};
 		9EE580FB292A586200F79D98 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47B6752CFF3E07C758CA658B /* Pods-TextStrock.debug.xcconfig */;
+			baseConfigurationReference = 73E67278EA9034D31725B485 /* Pods-TextStrock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2673,7 +2673,7 @@
 		};
 		9EE580FC292A586200F79D98 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 543D34E7889CC342249FFE27 /* Pods-TextStrock.release.xcconfig */;
+			baseConfigurationReference = 4FB22BA2C46EF02BC8531F99 /* Pods-TextStrock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
