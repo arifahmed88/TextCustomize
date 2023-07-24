@@ -223,8 +223,16 @@ class TextCurveViewController: UIViewController {
         let originX:CGFloat = 20
         let originY:CGFloat = 160
         let textFontSize = getTextSize(label: curveLabel)
-        let heightOffset = (15/40)*textFontSize.width
-        let widthOffset = (15/53)*textFontSize.width
+        var heightOffset = (15/40)*textFontSize.width
+        var widthOffset = (15/53)*textFontSize.width
+        
+        if heightOffset < 30 {
+            heightOffset = 30
+        }
+        
+        if widthOffset < 30 {
+            widthOffset = 30
+        }
         
         curveLabel.curveLabelHeightOffset = heightOffset
         curveLabel.curveLabelWidthOffset = widthOffset

@@ -14,8 +14,8 @@
             filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "getRadiusForLabel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "getRadiusForLabel()"
             landmarkType = "7">
             <Locations>
@@ -78,8 +78,8 @@
             filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "getRadiusForLabel()"
             landmarkType = "7">
             <Locations>
@@ -141,8 +141,8 @@
             filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "sliderAction(_:)"
             landmarkType = "7">
             <Locations>

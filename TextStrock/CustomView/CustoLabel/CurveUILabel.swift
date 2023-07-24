@@ -21,7 +21,17 @@ class CurveUILabel: UILabel {
     
     
     override func draw(_ rect: CGRect) {
-        centreArcPerpendicular()
+        
+        let value = 10 - log10(abs(sliderValue))
+        print("auny value = \(value)")
+        if value < 6.0{
+            super.draw(rect)
+        } else {
+            centreArcPerpendicular()
+        }
+
+        
+//        centreArcPerpendicular()
     }
     
     
