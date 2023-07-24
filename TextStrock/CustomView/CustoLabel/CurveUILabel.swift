@@ -19,6 +19,7 @@ class CurveUILabel: UILabel {
     var curveLabelHeightOffset:CGFloat = 30
     var curveLabelWidthOffset:CGFloat = 30
     
+    
     override func draw(_ rect: CGRect) {
         centreArcPerpendicular()
     }
