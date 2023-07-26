@@ -20,8 +20,19 @@ class CurveUILabel: UILabel {
     var curveLabelWidthOffset:CGFloat = 30
     
     
+//    override func drawText(in rect: CGRect) {
+//        let value = 10 - log10(abs(sliderValue))
+//        print("auny value = \(value)")
+//        if value < 6.0{
+//            guard let context = UIGraphicsGetCurrentContext() else { return }
+//            context.restoreGState()
+//            super.drawText(in: rect)
+//        } else {
+//            centreArcPerpendicular()
+//        }
+//    }
+    
     override func draw(_ rect: CGRect) {
-        
         let value = 10 - log10(abs(sliderValue))
         print("auny value = \(value)")
         if value < 6.0{
@@ -29,18 +40,18 @@ class CurveUILabel: UILabel {
         } else {
             centreArcPerpendicular()
         }
-
-        
-//        centreArcPerpendicular()
     }
+    
+
     
     
     func labelWidthCalculation(){
-        let textSize = self.text?.size(withAttributes: [NSAttributedString.Key.font: self.font ?? UIFont.boldSystemFont(ofSize: CGFloat(10.0))])
-//        print("oni = \(textSize)")
+//        let textSize = self.text?.size(withAttributes: [NSAttributedString.Key.font: self.font ?? UIFont.boldSystemFont(ofSize: CGFloat(10.0))])
+        let textSize = getTextSize()
+        print("oni = \(textSize)")
         
         //width calculation
-        let s = textSize!.width
+        let s = textSize.width
         guard let r = getRadiusForLabel() else {
             return
         }
@@ -53,7 +64,8 @@ class CurveUILabel: UILabel {
         let q = p/(tan(theta/2))
         let resizedHeight = r - q
         
-        self.bounds.size.width = resizedWidth+(curveLabelWidthOffset*2)
+        let factor = 1 - ((log(sliderValue))/10)
+        self.bounds.size.width = resizedWidth+curveLabelWidthOffset+(curveLabelWidthOffset*(factor))
         self.bounds.size.height = resizedHeight+(curveLabelHeightOffset)
     }
     
@@ -93,7 +105,7 @@ class CurveUILabel: UILabel {
         // Calculate the arc subtended by each letter and their total
         for i in 0 ..< l {
             
-            arcs += [chordToArc(characters[i].size(withAttributes: attributes).width+fontSpace, radius: radius)]
+            arcs += [chordToArc(characters[i].size(withAttributes: attributes).width+(fontSpace*font.pointSize), radius: radius)]
             
             totalArc += arcs[i]
         }
@@ -141,6 +153,7 @@ class CurveUILabel: UILabel {
     
     func chordToArc(_ chord: CGFloat, radius: CGFloat) -> CGFloat {
         print("auny --start-- ")
+        print("auny --start-- ")
         print("auny chord = \(chord)")
         print("auny radius = \(radius)")
         print("auny (2 * radius) = \((2 * radius))")
@@ -182,7 +195,9 @@ class CurveUILabel: UILabel {
         let newY = flag*(r * sin(theta))
         
         let a = log(sliderValue)
-        let value = sliderValue/exp(10)
+        print("arif a =\(a)")
+        print("arif a =\(a)")
+        //let value = (a/10)
         var Roffset:CGFloat = ((bounds.height)/2)*(a/10)
         
         if flag == 1{
@@ -259,7 +274,7 @@ class CurveUILabel: UILabel {
         
         // Dividing the smallestWidthOrHeight by 2 gives us the radius for the circle.
         
-        var temp = (((diameter)/2) - (heightOfFont))
+        var temp = (((diameter)/2) - (textFontSize.height))
 //        print("auny temp = \(temp)")
         
         if temp < 0.0{
@@ -305,7 +320,7 @@ class CurveUILabel: UILabel {
         let newLabel = self
         let font =  (newLabel.font) ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))
         
-        let kernvalue = fontSpace
+        let kernvalue = (fontSpace)*font.pointSize
         let attributedString = NSMutableAttributedString(string: newLabel.text ?? " ")
         attributedString.addAttribute(NSAttributedString.Key.kern,
                                       value: kernvalue,

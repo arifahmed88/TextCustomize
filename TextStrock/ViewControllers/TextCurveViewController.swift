@@ -62,8 +62,8 @@ class TextCurveViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     
     var fontSpaceSliderValue:Float = 0
-    let fontSpaceSliderMinValue:Float = -20
-    let fontSpaceSliderMaxValue:Float = 20
+    let fontSpaceSliderMinValue:Float = -0.8
+    let fontSpaceSliderMaxValue:Float = 0.8
     
     var fontSliderValue:Float = 0.0
     let fontSliderMinValue:Float = 0
@@ -102,7 +102,9 @@ class TextCurveViewController: UIViewController {
         //
         if let font = curveLabel.font,let text = curveLabel.text{
             let ar = getAttributedText(font: font, text: text)
+            //curveLabel.text = text
             curveLabel.attributedText = ar
+            curveLabel.setNeedsDisplay()
         }
         
         
@@ -111,13 +113,15 @@ class TextCurveViewController: UIViewController {
     
     
     func getAttributedText(font:UIFont,text:String)->NSMutableAttributedString{
-        
-        let kernValue = 3.0
+        print("kern fontSpaceSliderValue= \(fontSpace)")
+        print("kern font.pointSize= \(font.pointSize)")
+        let kernValue = fontSpace*(font.pointSize)
+        print("kern  kernValue= \(kernValue)")
         
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.addAttribute(NSAttributedString.Key.kern,
                                       value: kernValue,
-                                      range: NSRange(location: 0, length: attributedString.length))
+                                      range: NSRange(location: 0, length: attributedString.length-1))
         
         attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attributedString.length))
         
@@ -133,8 +137,10 @@ class TextCurveViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        curveLabelResize()
+        if !isviewDidLayoutSubviews{
+            curveLabelResize()
+        }
+       
     }
     
     private func allButtonInit(){
@@ -145,10 +151,16 @@ class TextCurveViewController: UIViewController {
     
     
     @IBAction func fontSpaceSliderAction(_ sender: UISlider) {
-        fontSpace = CGFloat(sender.value)*(30/fontSize)
+        fontSpace = CGFloat(sender.value)
         let value = CGFloat(sender.value)
     
-        fontSpaceSliderLabel.text = "\(Int(value))"
+        fontSpaceSliderLabel.text = "\(Int(value*100))"
+        
+        if let font = curveLabel.font,let text = curveLabel.text{
+            let ar = getAttributedText(font: font, text: text)
+            //curveLabel.text = text
+            curveLabel.attributedText = ar
+        }
         
         circleDiameterCalculate()
         curveLabelResize()
@@ -195,9 +207,11 @@ class TextCurveViewController: UIViewController {
         guard let newLabel = label else {
             return CGSize(width: 0, height: 0)
         }
-        let font =  (newLabel.font) ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))
+        let font = (newLabel.font) ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))
         
-        let kernvalue = fontSpace
+        let kernvalue = fontSpace*font.pointSize
+        print("kern getTextSize = \(fontSpace) -- \(kernvalue)")
+        
         let attributedString = NSMutableAttributedString(string: newLabel.text ?? " ")
         attributedString.addAttribute(NSAttributedString.Key.kern,
                                       value: kernvalue,
@@ -259,7 +273,7 @@ class TextCurveViewController: UIViewController {
         fontSpaceSlider.minimumValue = fontSpaceSliderMinValue
         fontSpaceSlider.maximumValue = fontSpaceSliderMaxValue
         fontSpaceSlider.value = fontSpaceSliderValue
-        fontSpaceSliderLabel.text = "\(Int(fontSpaceSliderValue))"
+        fontSpaceSliderLabel.text = "\(Int(fontSpaceSliderValue*100))"
     }
 
     @IBAction func closeButtonAction(_ sender: Any) {
