@@ -78,6 +78,11 @@ class CustomLabel: UILabel {
         }
         super.drawText(in: rect)
         
+        
+        
+        
+        
+        
         //--------text draw------------
         context.setTextDrawingMode(.fill)
         

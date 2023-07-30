@@ -13,6 +13,19 @@ class TextCurveViewController: UIViewController {
     
     @IBOutlet weak var bottomScrollView: UIScrollView!
     
+    @IBOutlet weak var fontOutlineSwitch: UISwitch!
+    
+    @IBOutlet weak var fontOutlineSwitchlabel: UILabel!
+    
+    @IBOutlet weak var colorBarView: ColorBarview!
+    
+    @IBOutlet weak var fontStrokeView: UIView!
+    
+    @IBOutlet weak var fontStrokeSlider: UISlider!
+    
+    @IBOutlet weak var fontStrokeSliderLabel: UILabel!
+    
+    
     
     @IBOutlet weak var fontSpaceView: UIView!
     
@@ -61,12 +74,16 @@ class TextCurveViewController: UIViewController {
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     
+    var fontStrokeSliderValue:Float = 0
+    let fontStrokeSliderMinValue:Float = 0.0
+    let fontStrokeSliderMaxValue:Float = 1.0
+    
     var fontSpaceSliderValue:Float = 0
     let fontSpaceSliderMinValue:Float = -0.8
     let fontSpaceSliderMaxValue:Float = 0.8
     
     var fontSliderValue:Float = 0.0
-    let fontSliderMinValue:Float = 0
+    let fontSliderMinValue:Float = 3.0
     let fontSliderMaxValue:Float = 400
     
     var sliderValue:Float = 0.0
@@ -85,6 +102,8 @@ class TextCurveViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorBarView.delegate = self
+        
         curveLabel.font = UIFont(name: fontName, size: fontSize)
         curveLabel.clipsToBounds = false
         curveLabel.layer.masksToBounds = false
@@ -95,6 +114,7 @@ class TextCurveViewController: UIViewController {
         circleDiameterCalculate()
         
         sliderValueInit()
+        switchInit()
         
         view.insertSubview(curveLabel, belowSubview: bottomScrollView)
         fontView.delegate = self
@@ -147,6 +167,19 @@ class TextCurveViewController: UIViewController {
         editTextButton.layer.borderColor = UIColor.hexStringToUIColor(hex: "#06283D").cgColor
         editTextButton.layer.borderWidth = 2.0
         editTextButton.layer.cornerRadius = 4.0
+    }
+    
+    @IBAction func fontOutlineSwitchAction(_ sender: Any) {
+        switchInit()
+    }
+    
+    
+    @IBAction func fontStrokeSliderAction(_ sender: UISlider) {
+        let value = CGFloat(sender.value)
+        fontStrokeSliderLabel.text = "\(Int(value*100))"
+        fontStrokeSliderValue = Float(value)
+        curveLabel.strokeWidthChange(value: value)
+        
     }
     
     
@@ -256,6 +289,14 @@ class TextCurveViewController: UIViewController {
         curveLabel.center = labelPreviousCenter
     }
     
+    private func switchInit(){
+        if fontOutlineSwitch.isOn{
+            fontOutlineSwitchlabel.text = "Outline"
+        } else {
+            fontOutlineSwitchlabel.text = "Font"
+        }
+    }
+    
     private func sliderValueInit(){
         slider.minimumValue = sliderMinValue
         slider.maximumValue = sliderMaxValue
@@ -274,6 +315,15 @@ class TextCurveViewController: UIViewController {
         fontSpaceSlider.maximumValue = fontSpaceSliderMaxValue
         fontSpaceSlider.value = fontSpaceSliderValue
         fontSpaceSliderLabel.text = "\(Int(fontSpaceSliderValue*100))"
+        
+        
+        fontStrokeSlider.minimumValue = fontStrokeSliderMinValue
+        fontStrokeSlider.maximumValue = fontStrokeSliderMaxValue
+        fontStrokeSlider.value = fontStrokeSliderValue
+        fontStrokeSliderLabel.text = "\(Int(fontStrokeSliderValue*100))"
+        
+        
+        
     }
 
     @IBAction func closeButtonAction(_ sender: Any) {
@@ -385,9 +435,6 @@ extension TextCurveViewController: UIGestureRecognizerDelegate {
     }
 }
 
-
-
-
 extension CGFloat {
     var degrees: CGFloat {
         return self * (180.0 / .pi)
@@ -397,4 +444,27 @@ extension CGFloat {
         return self / 180.0 * .pi
     }
     
+}
+
+
+
+extension TextCurveViewController:ColorBarviewDelegate{
+    func selectedColor(color: UIColor) {
+        
+        if fontOutlineSwitch.isOn{
+            curveLabel.strokeColorChange(color: color)
+        } else {
+            curveLabel.textColorChange(color: color)
+        }
+    }
+    
+    func selectedGradientColor(gColor:GradientColor) {
+        
+        if fontOutlineSwitch.isOn{
+            curveLabel.strokeGradientColorChange(color: gColor)
+        } else {
+            curveLabel.textGradientColorChange(color: gColor)
+        }
+
+    }
 }

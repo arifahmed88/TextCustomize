@@ -7,133 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "388E24EC-30D7-4411-8920-797BD11E1E23"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
-            landmarkName = "getRadiusForLabel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A0580AB1-AEFF-42BE-8838-111FBD629D6D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
-            landmarkName = "getRadiusForLabel()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A0580AB1-AEFF-42BE-8838-111FBD629D6D - e53008d442065cb5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
-                  moduleName = "TextStrock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "217"
-                  endingLineNumber = "217"
-                  offsetFromSymbolStart = "1424">
-               </Location>
-               <Location
-                  uuid = "A0580AB1-AEFF-42BE-8838-111FBD629D6D - e53008d442065c92"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
-                  moduleName = "TextStrock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "218"
-                  endingLineNumber = "218"
-                  offsetFromSymbolStart = "1424">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "02EF0DC3-0753-4224-A20C-B3AEB32DAB47"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "getRadiusForLabel()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "02EF0DC3-0753-4224-A20C-B3AEB32DAB47 - e53008d442065a68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
-                  moduleName = "TextStrock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "196"
-                  endingLineNumber = "196"
-                  offsetFromSymbolStart = "396">
-               </Location>
-               <Location
-                  uuid = "02EF0DC3-0753-4224-A20C-B3AEB32DAB47 - e53008d442065a68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
-                  moduleName = "TextStrock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "196"
-                  endingLineNumber = "196"
-                  offsetFromSymbolStart = "464">
-               </Location>
-               <Location
-                  uuid = "02EF0DC3-0753-4224-A20C-B3AEB32DAB47 - e53008d4420659ec"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TextStrock.CurveUILabel.getRadiusForLabel() -&gt; Swift.Optional&lt;CoreGraphics.CGFloat&gt;"
-                  moduleName = "TextStrock"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "192"
-                  endingLineNumber = "192"
-                  offsetFromSymbolStart = "128">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F68EA76D-570E-4163-AE20-1A74EBEE4E26"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -141,8 +14,8 @@
             filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
             landmarkName = "sliderAction(_:)"
             landmarkType = "7">
             <Locations>
