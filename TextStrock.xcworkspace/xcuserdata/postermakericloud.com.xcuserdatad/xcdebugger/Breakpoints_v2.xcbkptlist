@@ -8,14 +8,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F68EA76D-570E-4163-AE20-1A74EBEE4E26"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "sliderAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -49,7 +49,118 @@
                   endingLineNumber = "270"
                   offsetFromSymbolStart = "20">
                </Location>
+               <Location
+                  uuid = "F68EA76D-570E-4163-AE20-1A74EBEE4E26 - 3e67ea82e626eda1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextStrock.TextCurveViewController.sliderAction(__C.UISlider) -&gt; ()"
+                  moduleName = "TextStrock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/ViewControllers/TextCurveViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "314"
+                  endingLineNumber = "314"
+                  offsetFromSymbolStart = "104">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80546A69-4F62-4B94-BA77-1C5D2D591E4A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "sliderAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "80546A69-4F62-4B94-BA77-1C5D2D591E4A - 3e67ea82e626e9a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextStrock.TextCurveViewController.sliderAction(__C.UISlider) -&gt; ()"
+                  moduleName = "TextStrock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/ViewControllers/TextCurveViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "676">
+               </Location>
+               <Location
+                  uuid = "80546A69-4F62-4B94-BA77-1C5D2D591E4A - 3e67ea82e626e981"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextStrock.TextCurveViewController.sliderAction(__C.UISlider) -&gt; ()"
+                  moduleName = "TextStrock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/ViewControllers/TextCurveViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "346"
+                  endingLineNumber = "346"
+                  offsetFromSymbolStart = "676">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "008BA483-A12C-4DF7-95F6-E630538D8B36"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
+            landmarkName = "fontChange(fontName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78F1E55D-11B8-48A5-85C0-3F3B39E9B2D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
+            landmarkName = "curveText(value:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99EC8962-E9AE-45DD-9990-F25260C77B7A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "labelWidthCalculation()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

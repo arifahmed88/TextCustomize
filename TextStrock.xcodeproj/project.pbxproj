@@ -759,7 +759,7 @@
 		9E6534812933494400CA0E11 /* Magical Signature Script.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Magical Signature Script.otf"; sourceTree = "<group>"; };
 		9E6534822933494400CA0E11 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		9E6534832933494400CA0E11 /* Sandrina.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sandrina.ttf; sourceTree = "<group>"; };
-		9E6534842933494400CA0E11 /* PER_____.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = PER_____.TTF; sourceTree = "<group>"; };
+		9E6534842933494400CA0E11 /* PER_____.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PER_____.TTF"; sourceTree = "<group>"; };
 		9E6534852933494400CA0E11 /* Azedo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Azedo-Light.otf"; sourceTree = "<group>"; };
 		9E6534862933494400CA0E11 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		9E6534872933494400CA0E11 /* LEXIB__.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LEXIB__.ttf; sourceTree = "<group>"; };
@@ -894,7 +894,7 @@
 		9E6535082933494400CA0E11 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		9E6535092933494400CA0E11 /* Gorgone Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gorgone Italic.ttf"; sourceTree = "<group>"; };
 		9E65350A2933494400CA0E11 /* Yesteryear-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yesteryear-Regular.ttf"; sourceTree = "<group>"; };
-		9E65350B2933494400CA0E11 /* NEON____.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = NEON____.TTF; sourceTree = "<group>"; };
+		9E65350B2933494400CA0E11 /* NEON____.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NEON____.TTF"; sourceTree = "<group>"; };
 		9E65350C2933494400CA0E11 /* CooperHewitt-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperHewitt-Heavy.otf"; sourceTree = "<group>"; };
 		9E65350D2933494400CA0E11 /* BebasNeue Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue Bold.otf"; sourceTree = "<group>"; };
 		9E65350E2933494400CA0E11 /* Cardinal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cardinal.ttf; sourceTree = "<group>"; };
@@ -980,7 +980,7 @@
 		9E65355E2933494400CA0E11 /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
 		9E65355F2933494400CA0E11 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
 		9E6535602933494400CA0E11 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = segoeui.ttf; sourceTree = "<group>"; };
-		9E6535612933494400CA0E11 /* WELTU___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = WELTU___.TTF; sourceTree = "<group>"; };
+		9E6535612933494400CA0E11 /* WELTU___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WELTU___.TTF"; sourceTree = "<group>"; };
 		9E6535622933494400CA0E11 /* Kristi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kristi-Regular.ttf"; sourceTree = "<group>"; };
 		9E6535632933494400CA0E11 /* Mellows.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mellows.ttf; sourceTree = "<group>"; };
 		9E6535642933494400CA0E11 /* FREESCPT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FREESCPT.TTF; sourceTree = "<group>"; };
@@ -1000,7 +1000,7 @@
 		9E903335293DB79400B6C3D7 /* FontTypographyAdjustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTypographyAdjustViewController.swift; sourceTree = "<group>"; };
 		9E903336293DB79400B6C3D7 /* FontTypographyAdjustViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontTypographyAdjustViewController.xib; sourceTree = "<group>"; };
 		9EA08EF52976C06E00C9E642 /* BlendBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendBarView.swift; sourceTree = "<group>"; };
-		9EA9BFF4294EE557000930FD /* TextCurveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCurveViewController.swift; sourceTree = "<group>"; };
+		9EA9BFF4294EE557000930FD /* TextCurveViewController.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = TextCurveViewController.swift; sourceTree = "<group>"; };
 		9EA9BFF5294EE557000930FD /* TextCurveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCurveViewController.xib; sourceTree = "<group>"; };
 		9EA9BFF8294EE8CE000930FD /* CurveUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveUILabel.swift; sourceTree = "<group>"; };
 		9EB12FDD29792D19000F48AD /* 50008@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "50008@3x.png"; sourceTree = "<group>"; };

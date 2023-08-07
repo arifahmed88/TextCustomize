@@ -9,47 +9,47 @@ import UIKit
 
 @IBDesignable
 class CurveUILabel: UILabel {
-    @IBInspectable var angle: CGFloat = (90)*(.pi/180)
-    @IBInspectable var clockwise: Bool = true
-    var sliderValue:CGFloat = 0.0
+    var angle: CGFloat = (90)*(.pi/180)
+    var clockwise: Bool = true
+    var sliderValue:CGFloat = 1.0
     var fontSpace:CGFloat = 0.0
     var reverseAngle = false
-    
-    var curveLabelHeightOffset:CGFloat = 30
-    var curveLabelWidthOffset:CGFloat = 30
+    var circleDiameter = 0.0
     
     //stroke
     private var strokeColor = UIColor.systemBlue
     private var strokeWidth:CGFloat = 0.0
     
-    
-//    override func drawText(in rect: CGRect) {
-//        let value = 10 - log10(abs(sliderValue))
-//        print("auny value = \(value)")
-//        if value < 6.0{
-//            guard let context = UIGraphicsGetCurrentContext() else { return }
-//            context.restoreGState()
-//            super.drawText(in: rect)
-//        } else {
-//            centreArcPerpendicular()
-//        }
-//    }
-    
     override func draw(_ rect: CGRect) {
         let value = 10 - log10(abs(sliderValue))
-        self.backgroundColor = .clear
-        print("auny value = \(value)")
         if value < 6.0{
             super.draw(rect)
         } else {
             centreArcPerpendicular()
         }
+        
     }
     
+    private func getFontHeightWidthOffset()->(CGFloat,CGFloat){
+        let textFontSize = getTextSize()
+        var heightOffset = (15/40)*textFontSize.width
+        var widthOffset = (15/53)*textFontSize.width
+        
+        if heightOffset < 30 {
+            heightOffset = 30
+        }
+        
+        if widthOffset < 30 {
+            widthOffset = 30
+        }
+        
+        return (heightOffset,widthOffset)
+    }
 
     
     
     func labelWidthCalculation(){
+        
         let textSize = getTextSize()
         //width calculation
         let s = textSize.width
@@ -57,21 +57,30 @@ class CurveUILabel: UILabel {
             return
         }
         let theta = s/r
-        
+
         let p = (r*sin(theta/2))
         let resizedWidth = 2*p
-        
+
         //height calculation
         let q = p/(tan(theta/2))
         let resizedHeight = r - q
-        
+
         let factor = 1 - ((log(sliderValue))/10)
-        self.bounds.size.width = resizedWidth+curveLabelWidthOffset+(curveLabelWidthOffset*(factor))
-        self.bounds.size.height = resizedHeight+(curveLabelHeightOffset)
+
+        let (curveLabelHeightOffset,curveLabelWidthOffset) = getFontHeightWidthOffset()
+        let w = round(resizedWidth+curveLabelWidthOffset+(curveLabelWidthOffset*(factor)))
+        let h = round(resizedHeight+(curveLabelHeightOffset))
+        
+        let previousCenter = CGPoint(x: self.center.x, y: self.center.y)
+        self.frame.size.width = w
+        self.frame.size.height = h
+        self.center = previousCenter
+        
     }
     
     func centreArcPerpendicular() {
         guard let context = UIGraphicsGetCurrentContext() else { return }
+        context.saveGState()
         let str = self.text ?? ""
         let size = self.bounds.size
         let flag:CGFloat = reverseAngle ? -1 : 1
@@ -146,6 +155,7 @@ class CurveUILabel: UILabel {
      */
     func centre(text str: String, context: CGContext, radius r:CGFloat, angle theta: CGFloat, slantAngle: CGFloat, pointColor:UIColor,isFirst:Bool,islast:Bool) {
 
+        
         let textColor = self.textColor ?? .darkGray
         let textFont = self.font ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))
         let attributes : [NSAttributedString.Key : Any] = [.font : textFont,.foregroundColor : textColor] as [NSAttributedString.Key : Any]
@@ -187,7 +197,7 @@ class CurveUILabel: UILabel {
         context.translateBy(x: -offset.width / 2, y: -offset.height / 2)
         
         guard let context = UIGraphicsGetCurrentContext() else {return}
-        context.setBlendMode(.clear)
+        //context.setBlendMode(.clear)
         context.setTextDrawingMode(.fill)
         str.draw(at: CGPoint(x: 0, y: 0), withAttributes: attributes)
         
@@ -235,7 +245,6 @@ class CurveUILabel: UILabel {
       
        guard let context = UIGraphicsGetCurrentContext() else {return}
        let strokeSize = self.font.pointSize*strokeWidth
-       print("onistrokeSize  = \(strokeSize)")
        context.setLineWidth(strokeSize)
        context.setLineJoin(.round)
        context.setTextDrawingMode(.stroke)
@@ -247,9 +256,7 @@ class CurveUILabel: UILabel {
         let textFontSize = getTextSize()
         var diameter:CGFloat = ((textFontSize.width / (2 * .pi))*2)
         diameter += textFontSize.height*2
-        
-        let textSize = self.text?.size(withAttributes: [NSAttributedString.Key.font: self.font ?? UIFont.boldSystemFont(ofSize: CGFloat(10.0))])
-        let widthOfFont = textSize!.width
+
         var temp = (((diameter)/2) - (textFontSize.height))
         if temp < 0.0{
             temp = 50
@@ -262,7 +269,7 @@ class CurveUILabel: UILabel {
     
     private func getTextSize()->CGSize{
         let newLabel = self
-        let font =  (newLabel.font) ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))
+        let font = (newLabel.font) ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))
         
         let kernvalue = (fontSpace)*font.pointSize
         let attributedString = NSMutableAttributedString(string: newLabel.text ?? " ")
