@@ -14,8 +14,8 @@
             filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "sliderAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -77,8 +77,8 @@
             filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "sliderAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -125,8 +125,8 @@
             filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "fontChange(fontName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -141,10 +141,10 @@
             filePath = "TextStrock/ViewControllers/TextCurveViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "334"
-            endingLineNumber = "334"
-            landmarkName = "curveText(value:)"
-            landmarkType = "7">
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "TextCurveViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -157,8 +157,8 @@
             filePath = "TextStrock/CustomView/CustoLabel/CurveUILabel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "labelWidthCalculation()"
             landmarkType = "7">
          </BreakpointContent>

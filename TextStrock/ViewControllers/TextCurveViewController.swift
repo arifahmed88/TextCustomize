@@ -12,38 +12,19 @@ import SnapKit
 class TextCurveViewController: UIViewController {
    
    @IBOutlet weak var bottomScrollView: UIScrollView!
-   
    @IBOutlet weak var fontOutlineSwitch: UISwitch!
-   
    @IBOutlet weak var fontOutlineSwitchlabel: UILabel!
-   
    @IBOutlet weak var colorBarView: ColorBarview!
-   
    @IBOutlet weak var fontStrokeView: UIView!
-   
    @IBOutlet weak var fontStrokeSlider: UISlider!
-   
    @IBOutlet weak var fontStrokeSliderLabel: UILabel!
-   
-   
-   
    @IBOutlet weak var fontSpaceView: UIView!
-   
    @IBOutlet weak var fontSpaceSlider: UISlider!
-   
    @IBOutlet weak var fontSpaceSliderLabel: UILabel!
-   
-   
-   
    @IBOutlet weak var fontView: FontBarView!
-   
    @IBOutlet weak var canvasView: UIView!
-   
    @IBOutlet weak var fontSlider: UISlider!
-   
    @IBOutlet weak var fontSliderLabel: UILabel!
-   
-   
    @IBOutlet weak var editTextButton: UIButton!
    var textInputView:TextInputView? = nil
    
@@ -109,48 +90,24 @@ class TextCurveViewController: UIViewController {
       
       allButtonInit()
       gestureAddInCurveLabel()
-      circleDiameterCalculate()
       
       sliderValueInit()
       switchInit()
       
       canvasView.addSubview(curveLabel)
-      
       fontView.delegate = self
       
-      if let font = curveLabel.font,let text = curveLabel.text{
-         let atText = getAttributedText(font: font, text: text)
-         curveLabel.attributedText = atText
+      curveLabel.attributedTextInit(labelText: nil, textFont: nil)
+      curveLabel.curveText(curveValue: CGFloat(sliderValue), fontspace: fontSpace, fontSize: fontSize)
+   }
+   
+   override func viewDidLayoutSubviews() {
+      super.viewDidLayoutSubviews()
+      if !isviewDidLayoutSubviews{
+         isviewDidLayoutSubviews = true
+         curveLabel.center = CGPoint(x: canvasView.bounds.width*0.5, y: canvasView.bounds.height*0.5)
       }
-      
-      curveText(value: CGFloat(sliderValue))
-      
-      
-      
    }
-   
-   
-   func getAttributedText(font:UIFont,text:String)->NSMutableAttributedString{
-      print("kern fontSpaceSliderValue= \(fontSpace)")
-      print("kern font.pointSize= \(font.pointSize)")
-      let kernValue = fontSpace*(font.pointSize)
-      print("kern  kernValue= \(kernValue)")
-      
-      let attributedString = NSMutableAttributedString(string: text)
-      attributedString.addAttribute(NSAttributedString.Key.kern,
-                                    value: kernValue,
-                                    range: NSRange(location: 0, length: attributedString.length-1))
-      
-      attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attributedString.length))
-      
-      let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
-      paragraphStyle.alignment = NSTextAlignment.center
-      
-      attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length-1))
-      
-      return attributedString
-   }
-   
    
    private func allButtonInit(){
       editTextButton.layer.borderColor = UIColor.hexStringToUIColor(hex: "#06283D").cgColor
@@ -174,30 +131,19 @@ class TextCurveViewController: UIViewController {
    
    @IBAction func fontSpaceSliderAction(_ sender: UISlider) {
       fontSpace = CGFloat(sender.value)
-      let value = CGFloat(sender.value)
-      
-      fontSpaceSliderLabel.text = "\(Int(value*100))"
-      
-      if let font = curveLabel.font,let text = curveLabel.text{
-         let ar = getAttributedText(font: font, text: text)
-         //curveLabel.text = text
-         curveLabel.attributedText = ar
-      }
-      curveText(value: CGFloat(sliderValue))
+      fontSpaceSliderLabel.text = "\(Int(sender.value*100))"
+      curveLabel.curveText(curveValue: CGFloat(sliderValue), fontspace: fontSpace, fontSize: fontSize)
       
    }
    
    @IBAction func fontSliderAction(_ sender: UISlider) {
-      
       fontSliderValue = sender.value
       let value = CGFloat(sender.value)
       fontSize = value
       fontSliderLabel.text = "\(Int(value))"
       let font = UIFont(name: fontName, size: fontSize)
       curveLabel.font = font
-      
-      circleDiameterCalculate()
-      curveText(value: CGFloat(sliderValue))
+      curveLabel.curveText(curveValue: CGFloat(sliderValue), fontspace: fontSpace, fontSize: fontSize)
    }
    @IBAction func edittextButtonAction(_ sender: Any) {
       textInputView = TextInputView(frame: UIScreen.main.bounds)
@@ -216,39 +162,9 @@ class TextCurveViewController: UIViewController {
    }
    
    
-   func gestureAddInCurveLabel(){
+   private func gestureAddInCurveLabel(){
       let panGesture = UIPanGestureRecognizer(target: self,action:#selector(panGestureAction(gesture:)))
-      panGesture.delegate = self
       curveLabel.addGestureRecognizer(panGesture)
-   }
-   
-   
-   private func getTextSize(label:CurveUILabel?)->CGSize{
-      guard let newLabel = label else {
-         return CGSize(width: 0, height: 0)
-      }
-      let font = (newLabel.font) ?? UIFont.boldSystemFont(ofSize: CGFloat(24.0))
-      
-      let kernvalue = fontSpace*font.pointSize
-      print("kern getTextSize = \(fontSpace) -- \(kernvalue)")
-      
-      let attributedString = NSMutableAttributedString(string: newLabel.text ?? " ")
-      attributedString.addAttribute(NSAttributedString.Key.kern,
-                                    value: kernvalue,
-                                    range: NSRange(location: 0, length: attributedString.length-1))
-      
-      attributedString.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: attributedString.length))
-      
-      let size  = CGSize(width: attributedString.size().width+kernvalue, height: attributedString.size().height)
-      
-      return size
-   }
-   
-   private func circleDiameterCalculate(){
-      let textFontSize = getTextSize(label: curveLabel)
-      var diameter:CGFloat = ((textFontSize.width / (2 * .pi))*2)
-      diameter += textFontSize.height*2
-      circleDiameter = diameter
    }
    
    private func switchInit(){
@@ -284,64 +200,41 @@ class TextCurveViewController: UIViewController {
       fontStrokeSlider.value = fontStrokeSliderValue
       fontStrokeSliderLabel.text = "\(Int(fontStrokeSliderValue*100))"
       
-      
-      
    }
    
    @IBAction func closeButtonAction(_ sender: Any) {
       dismiss(animated: true)
    }
    
-   
-   
+
    @IBAction func sliderAction(_ sender: UISlider) {
       sliderValue = sender.value
       let value = CGFloat(sender.value)
       sliderLabel.text = "\(Int(value))"
-      curveText(value: value)
-      
+      curveLabel.curveText(curveValue: CGFloat(sliderValue), fontspace: fontSpace, fontSize: fontSize)
    }
    
    @objc func panGestureAction(gesture: UIPanGestureRecognizer) {
-      
       let translation = gesture.translation(in: curveLabel)
-      switch gesture.state {
-      case .began:
-         //print("start")
-         break
-      case .ended, .cancelled, .failed:
-         //print("End")
-         break
-      case .changed:
-         let center = CGPoint(x:self.curveLabel.center.x + translation.x, y: self.curveLabel.center.y + translation.y)
-         curveLabel.center = center
-         labelPreviousCenter = center
-         
-      default:
-         break
-      }
+      let center = CGPoint(x:self.curveLabel.center.x + translation.x, y: self.curveLabel.center.y + translation.y)
+      curveLabel.center = center
+      labelPreviousCenter = center
       gesture.setTranslation(CGPoint.zero, in: self.curveLabel)
    }
    
-   fileprivate func curveText(value: CGFloat) {
-      curveLabel.reverseAngle = value >= 0 ? false : true
-      let sliderValue:CGFloat = abs(CGFloat(sliderMaxValue) - abs(value))
-      let newValue:CGFloat = rangeConverter(value: Float(sliderValue), OldMin: 0, OldMax: Int(sliderMaxValue), NewMin: 0, NewMax: 100)/10
-      let convertedValue = exp(newValue)
-      let newConValue = ((convertedValue/30)*fontSize)
-      curveLabel.sliderValue = newConValue
-      curveLabel.fontSpace = fontSpace
-      curveLabel.labelWidthCalculation()
-      curveLabel.setNeedsDisplay()
-      
-   }
-   
-   
-   private func rangeConverter(value:Float,OldMin:Int,OldMax:Int,NewMin:Int,NewMax:Int) -> CGFloat {
-      let OldValue = Int(value)
-      let NewValue = (((OldValue - OldMin) * (NewMax - NewMin)) / (OldMax - OldMin)) + NewMin
-      return CGFloat(NewValue)
-   }
+//   fileprivate func curveText(value: CGFloat) {
+//      curveLabel.reverseAngle = value >= 0 ? false : true
+//      let sliderValue:CGFloat = abs(CGFloat(sliderMaxValue) - abs(value))
+//      let newValue:CGFloat = rangeConverter(value: Float(sliderValue), OldMin: 0, OldMax: Int(sliderMaxValue), NewMin: 0, NewMax: 100)/10
+//      let convertedValue = exp(newValue)
+//      let newConValue = ((convertedValue/30)*fontSize)
+//      curveLabel.sliderValue = newConValue
+//      curveLabel.fontSpace = fontSpace
+//      curveLabel.labelWidthCalculation()
+//      curveLabel.setNeedsDisplay()
+//
+//   }
+
 }
 
 extension TextCurveViewController:TextInputViewDelegate{
@@ -354,14 +247,12 @@ extension TextCurveViewController:TextInputViewDelegate{
             textInputView.removeFromSuperview()
          })
       }
-      //textInputView = nil
-      
       if let textString = text{
          let newtext = textString.trimmingCharacters(in: .whitespaces)
          if newtext.isEmpty { return}
-         
          curveLabel.text = newtext
-         curveText(value: CGFloat(sliderValue))
+         curveLabel.attributedTextInit(labelText: newtext, textFont: nil)
+         curveLabel.curveText(curveValue: CGFloat(sliderValue), fontspace: fontSpace, fontSize: fontSize)
       }
       
    }
@@ -373,29 +264,11 @@ extension TextCurveViewController:FontBarViewDelegate{
          self.fontName = fontName
          if let font  = UIFont(name: fontName, size: fontSize){
             curveLabel.font = font
-            curveText(value: CGFloat(sliderValue))
+            curveLabel.curveText(curveValue: CGFloat(sliderValue), fontspace: fontSpace, fontSize: fontSize)
          }
       }
       
    }
-}
-
-extension TextCurveViewController: UIGestureRecognizerDelegate {
-   
-   func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-      return false
-   }
-}
-
-extension CGFloat {
-   var degrees: CGFloat {
-      return self * (180.0 / .pi)
-   }
-   
-   var radians: CGFloat {
-      return self / 180.0 * .pi
-   }
-   
 }
 
 

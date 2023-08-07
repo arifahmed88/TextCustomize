@@ -15,10 +15,18 @@ class CurveUILabel: UILabel {
     var fontSpace:CGFloat = 0.0
     var reverseAngle = false
     var circleDiameter = 0.0
-    
-    //stroke
     private var strokeColor = UIColor.systemBlue
     private var strokeWidth:CGFloat = 0.0
+    private let sliderMaxValue:Float = 360.0
+    
+    override init(frame:CGRect){
+        super.init(frame: frame)
+        attributedTextInit(labelText: nil, textFont: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func draw(_ rect: CGRect) {
         let value = 10 - log10(abs(sliderValue))
@@ -29,6 +37,53 @@ class CurveUILabel: UILabel {
         }
         
     }
+    
+    
+    func curveText(curveValue: CGFloat,fontspace:CGFloat,fontSize:CGFloat) {
+        reverseAngle = curveValue >= 0 ? false : true
+        let sliderValue:CGFloat = abs(CGFloat(sliderMaxValue) - abs(curveValue))
+        let newValue:CGFloat = rangeConverter(value: Float(sliderValue), OldMin: 0, OldMax: Int(sliderMaxValue), NewMin: 0, NewMax: 100)/10
+        let convertedValue = exp(newValue)
+        let newConValue = ((convertedValue/30)*fontSize)
+        self.sliderValue = newConValue
+        fontSpace = fontspace
+        labelWidthCalculation()
+        setNeedsDisplay()
+    }
+    
+    func attributedTextInit(labelText:String?,textFont:UIFont?){
+        var newtext:String = " "
+        if text != nil{
+            newtext = text!
+        }
+        if labelText != nil{
+            newtext = labelText!
+        }
+        
+        var newfont = UIFont.boldSystemFont(ofSize: CGFloat(24.0))
+        if font != nil{
+            newfont = font!
+        }
+        if textFont != nil{
+            newfont = textFont!
+        }
+        
+        
+        let kernValue = fontSpace*(font.pointSize)
+        let attributedString = NSMutableAttributedString(string: newtext)
+        attributedString.addAttribute(NSAttributedString.Key.kern,
+                                      value: kernValue,
+                                      range: NSRange(location: 0, length: attributedString.length-1))
+        
+        attributedString.addAttribute(NSAttributedString.Key.font, value: newfont, range: NSRange(location: 0, length: attributedString.length))
+        
+        let paragraphStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.center
+        
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length-1))
+        self.attributedText = attributedString
+    }
+    
     
     private func getFontHeightWidthOffset()->(CGFloat,CGFloat){
         let textFontSize = getTextSize()
@@ -282,6 +337,12 @@ class CurveUILabel: UILabel {
         let size  = CGSize(width: attributedString.size().width+kernvalue, height: attributedString.size().height)
         
         return size
+    }
+    
+    private func rangeConverter(value:Float,OldMin:Int,OldMax:Int,NewMin:Int,NewMax:Int) -> CGFloat {
+       let OldValue = Int(value)
+       let NewValue = (((OldValue - OldMin) * (NewMax - NewMin)) / (OldMax - OldMin)) + NewMin
+       return CGFloat(NewValue)
     }
 }
 
