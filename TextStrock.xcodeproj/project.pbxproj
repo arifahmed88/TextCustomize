@@ -191,6 +191,9 @@
 		9E04C59929489530000C71FF /* w79.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E04C4E329489530000C71FF /* w79.jpg */; };
 		9E04C59A29489530000C71FF /* C200.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E04C4E429489530000C71FF /* C200.jpg */; };
 		9E13EDFD292E486100ABD699 /* MaskLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E13EDFC292E486100ABD699 /* MaskLabel.swift */; };
+		9E3598202AAD92BF005BFD55 /* TextCustomBoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35981E2AAD92BF005BFD55 /* TextCustomBoundViewController.swift */; };
+		9E3598212AAD92BF005BFD55 /* TextCustomBoundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E35981F2AAD92BF005BFD55 /* TextCustomBoundViewController.xib */; };
+		9E3598242AAD9600005BFD55 /* SelectionBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3598232AAD9600005BFD55 /* SelectionBorderView.swift */; };
 		9E65346B2933482100CA0E11 /* UIFont+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65346A2933482100CA0E11 /* UIFont+Extention.swift */; };
 		9E6535672933494400CA0E11 /* BalooBhai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E65346D2933494400CA0E11 /* BalooBhai-Regular.ttf */; };
 		9E6535682933494400CA0E11 /* olivers barney.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E65346E2933494400CA0E11 /* olivers barney.ttf */; };
@@ -537,6 +540,7 @@
 		9ED51308292FA5AE0042A69E /* UIColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED51307292FA5AE0042A69E /* UIColorList.swift */; };
 		9ED6637A292CA4270046846A /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED66379292CA4270046846A /* CustomLabel.swift */; };
 		9EDAD55929813EF500C0B8CF /* MagnifyingGlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDAD55829813EF500C0B8CF /* MagnifyingGlassView.swift */; };
+		9EDC737A2AB0484600E3CD6D /* TouchDownPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDC73792AB0484600E3CD6D /* TouchDownPanGestureRecognizer.swift */; };
 		9EE580EA292A586000F79D98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE580E9292A586000F79D98 /* AppDelegate.swift */; };
 		9EE580EC292A586000F79D98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE580EB292A586000F79D98 /* SceneDelegate.swift */; };
 		9EE580EE292A586000F79D98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE580ED292A586000F79D98 /* ViewController.swift */; };
@@ -735,6 +739,9 @@
 		9E04C4E329489530000C71FF /* w79.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = w79.jpg; sourceTree = "<group>"; };
 		9E04C4E429489530000C71FF /* C200.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = C200.jpg; sourceTree = "<group>"; };
 		9E13EDFC292E486100ABD699 /* MaskLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskLabel.swift; sourceTree = "<group>"; };
+		9E35981E2AAD92BF005BFD55 /* TextCustomBoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCustomBoundViewController.swift; sourceTree = "<group>"; };
+		9E35981F2AAD92BF005BFD55 /* TextCustomBoundViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCustomBoundViewController.xib; sourceTree = "<group>"; };
+		9E3598232AAD9600005BFD55 /* SelectionBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionBorderView.swift; sourceTree = "<group>"; };
 		9E65346A2933482100CA0E11 /* UIFont+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extention.swift"; sourceTree = "<group>"; };
 		9E65346D2933494400CA0E11 /* BalooBhai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooBhai-Regular.ttf"; sourceTree = "<group>"; };
 		9E65346E2933494400CA0E11 /* olivers barney.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "olivers barney.ttf"; sourceTree = "<group>"; };
@@ -1083,6 +1090,7 @@
 		9ED51307292FA5AE0042A69E /* UIColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorList.swift; sourceTree = "<group>"; };
 		9ED66379292CA4270046846A /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		9EDAD55829813EF500C0B8CF /* MagnifyingGlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnifyingGlassView.swift; sourceTree = "<group>"; };
+		9EDC73792AB0484600E3CD6D /* TouchDownPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchDownPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		9EE580E6292A586000F79D98 /* TextStrock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextStrock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE580E9292A586000F79D98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EE580EB292A586000F79D98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1379,6 +1387,17 @@
 				9EA9BFF8294EE8CE000930FD /* CurveUILabel.swift */,
 			);
 			path = CustoLabel;
+			sourceTree = "<group>";
+		};
+		9E3598222AAD95C4005BFD55 /* TextCustomBound */ = {
+			isa = PBXGroup;
+			children = (
+				9E35981E2AAD92BF005BFD55 /* TextCustomBoundViewController.swift */,
+				9E35981F2AAD92BF005BFD55 /* TextCustomBoundViewController.xib */,
+				9E3598232AAD9600005BFD55 /* SelectionBorderView.swift */,
+				9EDC73792AB0484600E3CD6D /* TouchDownPanGestureRecognizer.swift */,
+			);
+			path = TextCustomBound;
 			sourceTree = "<group>";
 		};
 		9E653469293347EC00CA0E11 /* Extention */ = {
@@ -1834,6 +1853,7 @@
 		9EE580E8292A586000F79D98 /* TextStrock */ = {
 			isa = PBXGroup;
 			children = (
+				9E3598222AAD95C4005BFD55 /* TextCustomBound */,
 				9ECC913B29518BC600991302 /* TextStrock-Bridging-Header.h */,
 				9ECC91342951847D00991302 /* DGCurvedLabel */,
 				9E04C42E29489530000C71FF /* Texture */,
@@ -2200,6 +2220,7 @@
 				9E6536192933494500CA0E11 /* Acme-Regular.ttf in Resources */,
 				9E04C54129489530000C71FF /* w35.jpg in Resources */,
 				9EB1302029792D1A000F48AD /* 50105@3x.png in Resources */,
+				9E3598212AAD92BF005BFD55 /* TextCustomBoundViewController.xib in Resources */,
 				9E65364C2933494500CA0E11 /* Gorgone Regular.ttf in Resources */,
 				9E04C51429489530000C71FF /* a900.jpg in Resources */,
 				9EB1304329793298000F48AD /* e8.png in Resources */,
@@ -2469,6 +2490,7 @@
 				9EC8468F294857DB00B9EFB4 /* TextTextureViewController.swift in Sources */,
 				9E65366529334B4800CA0E11 /* String+Extention.swift in Sources */,
 				9ED51304292FA1A80042A69E /* ColorBarview.swift in Sources */,
+				9EDC737A2AB0484600E3CD6D /* TouchDownPanGestureRecognizer.swift in Sources */,
 				9EDAD55929813EF500C0B8CF /* MagnifyingGlassView.swift in Sources */,
 				9E6F47462949DDA800A78BFD /* TextStyleViewController.swift in Sources */,
 				9E13EDFD292E486100ABD699 /* MaskLabel.swift in Sources */,
@@ -2479,6 +2501,7 @@
 				9ED51308292FA5AE0042A69E /* UIColorList.swift in Sources */,
 				9ECEEE312946FF2100AA5FD6 /* CustomLabelNew.swift in Sources */,
 				9E6F473A2949D9EE00A78BFD /* TextStyleBarView.swift in Sources */,
+				9E3598202AAD92BF005BFD55 /* TextCustomBoundViewController.swift in Sources */,
 				9E6F47422949DA8900A78BFD /* TextStyleBarViewCollectionViewCell.swift in Sources */,
 				9ECA66CE2935D920003B2C86 /* UIGradientColorList.swift in Sources */,
 				9EA9BFF9294EE8CE000930FD /* CurveUILabel.swift in Sources */,
@@ -2501,6 +2524,7 @@
 				9E65366E29334C9B00CA0E11 /* FontBarCollectionViewCell.swift in Sources */,
 				9EC36FAF2938955200DC06DF /* UIView+Extention.swift in Sources */,
 				9EC846942948685B00B9EFB4 /* TextTexture.swift in Sources */,
+				9E3598242AAD9600005BFD55 /* SelectionBorderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

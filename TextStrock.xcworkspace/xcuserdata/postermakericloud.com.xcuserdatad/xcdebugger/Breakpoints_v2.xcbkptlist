@@ -163,5 +163,180 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35C6CB4B-231D-4A9E-A05F-390DF96B93D4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "sliderAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A75B52F-5EB2-4F28-8A6A-AA5CA3748B17"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "gestureRecognizer(_:shouldReceive:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4A75B52F-5EB2-4F28-8A6A-AA5CA3748B17 - 3c6ec5a26ff9b752"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextStrock.TextCustomBoundViewController.gestureRecognizer(_: __C.UIGestureRecognizer, shouldReceive: __C.UITouch) -&gt; Swift.Bool"
+                  moduleName = "TextStrock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "144"
+                  endingLineNumber = "144"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "4A75B52F-5EB2-4F28-8A6A-AA5CA3748B17 - 3c6ec5a26ff9bb53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextStrock.TextCustomBoundViewController.gestureRecognizer(_: __C.UIGestureRecognizer, shouldReceive: __C.UITouch) -&gt; Swift.Bool"
+                  moduleName = "TextStrock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C98748C2-2E48-4C1F-9210-8C951CE58BAC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "pan(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9676C377-9A58-42BA-9CF9-1D0F2AB55FB2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "pan(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "449246B2-917E-4277-8C7D-336030EC3527"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "gestureRecognizer(_:shouldReceive:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "449246B2-917E-4277-8C7D-336030EC3527 - 3c6ec5a26ff9a0a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextStrock.TextCustomBoundViewController.gestureRecognizer(_: __C.UIGestureRecognizer, shouldReceive: __C.UITouch) -&gt; Swift.Bool"
+                  moduleName = "TextStrock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "1388">
+               </Location>
+               <Location
+                  uuid = "449246B2-917E-4277-8C7D-336030EC3527 - 3c6ec5a26ff9a0a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextStrock.TextCustomBoundViewController.gestureRecognizer(_: __C.UIGestureRecognizer, shouldReceive: __C.UITouch) -&gt; Swift.Bool"
+                  moduleName = "TextStrock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "1408">
+               </Location>
+               <Location
+                  uuid = "449246B2-917E-4277-8C7D-336030EC3527 - 3c6ec5a26ff9a756"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TextStrock.TextCustomBoundViewController.gestureRecognizer(_: __C.UIGestureRecognizer, shouldReceive: __C.UITouch) -&gt; Swift.Bool"
+                  moduleName = "TextStrock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/postermakericloud.com/Desktop/arif/%23MyTestProject/TextStrock/TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "1408">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56439C57-16F5-423D-AC65-2CF04B55F7A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TextStrock/TextCustomBound/TextCustomBoundViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "pan(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

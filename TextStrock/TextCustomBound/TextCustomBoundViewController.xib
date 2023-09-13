@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextCustomBoundViewController" customModule="TextStrock" customModuleProvider="target">
+            <connections>
+                <outlet property="gestureView" destination="1qO-bM-Pqi" id="3JK-kv-RcJ"/>
+                <outlet property="label" destination="Cli-dR-Wxp" id="MGA-2e-5P4"/>
+                <outlet property="labelHolderView" destination="0Lp-jl-fbB" id="ljv-3S-qFs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Lp-jl-fbB" customClass="SelectionBorderView" customModule="TextStrock" customModuleProvider="target">
+                    <rect key="frame" x="110" y="423" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sing like no one’s listening" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cli-dR-Wxp" userLabel="arif ahmed auny oni hello">
+                            <rect key="frame" x="59" y="49" width="122" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="24"/>
+                            <color key="textColor" red="0.14360502577319589" green="0.14360502577319589" blue="0.14360502577319589" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qO-bM-Pqi">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BNV-kg-9H1">
+                    <rect key="frame" x="28" y="792" width="358" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="mM8-lg-7zF"/>
+                    </constraints>
+                    <color key="minimumTrackTintColor" systemColor="systemIndigoColor"/>
+                    <connections>
+                        <action selector="sliderAction:" destination="-1" eventType="valueChanged" id="HXT-lh-3TG"/>
+                    </connections>
+                </slider>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nx-Vl-App">
+                    <rect key="frame" x="25" y="53" width="67" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Close">
+                        <color key="baseForegroundColor" systemColor="systemPinkColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="UBX-cD-Vnk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.65332957531515667" green="0.65037900212532573" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9Nx-Vl-App" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="0lw-i3-zbT"/>
+                <constraint firstItem="1qO-bM-Pqi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6uX-An-UNv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BNV-kg-9H1" secondAttribute="trailing" constant="30" id="At6-0w-nJI"/>
+                <constraint firstItem="9Nx-Vl-App" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="Cjk-wz-Xx1"/>
+                <constraint firstItem="BNV-kg-9H1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Q0a-Kc-OIc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BNV-kg-9H1" secondAttribute="bottom" constant="35" id="XJy-l1-KR7"/>
+                <constraint firstItem="1qO-bM-Pqi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="afe-3K-yzk"/>
+                <constraint firstItem="1qO-bM-Pqi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="csK-l3-0TD"/>
+                <constraint firstAttribute="bottom" secondItem="1qO-bM-Pqi" secondAttribute="bottom" id="l58-3Z-huX"/>
+            </constraints>
+            <point key="canvasLocation" x="-60" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

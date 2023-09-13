@@ -228,7 +228,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
-        let vc = MosaicViewController()
+        let vc = TextCustomBoundViewController()
 //        vc.delegate = self
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)

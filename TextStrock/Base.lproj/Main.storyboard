@@ -59,19 +59,8 @@
                                                     <action selector="imageButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0d6-go-2HI"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYR-78-z6a">
-                                                <rect key="frame" x="234" y="0.0" width="78" height="30"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Styles">
-                                                    <fontDescription key="titleFontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
-                                                    <color key="baseForegroundColor" red="0.0" green="0.53112786811099499" blue="0.6994414458569792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CR2-Hb-aUN"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XlA-UZ-4b0">
-                                                <rect key="frame" x="312" y="0.0" width="78" height="30"/>
+                                                <rect key="frame" x="234" y="0.0" width="78" height="30"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Curve">
                                                     <fontDescription key="titleFontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
@@ -79,6 +68,17 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="curveButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O1Q-Mg-iDO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYR-78-z6a">
+                                                <rect key="frame" x="312" y="0.0" width="78" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Bound">
+                                                    <fontDescription key="titleFontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                                    <color key="baseForegroundColor" red="0.0" green="0.53112786811099499" blue="0.6994414458569792" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CR2-Hb-aUN"/>
                                                 </connections>
                                             </button>
                                         </subviews>
